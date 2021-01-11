@@ -1,0 +1,2128 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>KAAE Site and Feature Record – V2</h:title>
+    <model>
+      <instance>
+        <site_and_feature_xlsform_V2 id="KAAE_site_and_feature_record_V2">
+          <basic_inf>
+            <region/>
+            <survey_block/>
+            <datetime/>
+            <surveyor/>
+          </basic_inf>
+          <other_inf>
+            <other_region/>
+            <other_surveyor/>
+          </other_inf>
+          <site_type/>
+          <geo_cover>
+            <visibility/>
+            <disturbance/>
+            <groundcover/>
+            <slope/>
+            <setting/>
+            <sediments/>
+          </geo_cover>
+          <geo_other>
+            <other_disturb/>
+            <other_groundcov/>
+            <other_setting/>
+            <other_sediments/>
+          </geo_other>
+          <spatial>
+            <datum/>
+            <track/>
+            <length/>
+            <width/>
+            <height/>
+            <site_shape/>
+          </spatial>
+          <overview>
+            <site_area/>
+            <calculated_area/>
+            <overview_sketch/>
+            <overview_photo/>
+          </overview>
+          <site_info>
+            <site_counts>
+              <num_caravans/>
+              <num_fire_pits/>
+              <num_graves/>
+              <num_kurgans/>
+              <num_lithic_scats/>
+              <num_mounds/>
+              <num_other_features/>
+              <num_other_houses/>
+              <num_other_pits/>
+              <num_pithouses/>
+              <num_rock_aligns/>
+              <num_rock_piles/>
+              <num_rock_rings/>
+              <num_sherd_scats/>
+              <num_standing_stones/>
+              <num_stone_walls/>
+              <num_towers/>
+              <num_tumuli/>
+            </site_counts>
+            <site_chars>
+              <caravans/>
+              <fire_pits/>
+              <lithic_scats/>
+              <pits/>
+              <rock_aligns/>
+              <rock_piles/>
+              <rock_rings/>
+              <sherd_scats/>
+              <standing_stones/>
+              <stone_walls/>
+              <towers/>
+              <graves/>
+              <kurgans/>
+              <other_houses/>
+              <pithouses/>
+              <mounds/>
+              <tumuli/>
+            </site_chars>
+            <site_oth_chars>
+              <other_caravans/>
+              <other_features/>
+              <other_fire_pits/>
+              <other_kurgans/>
+              <other_graves/>
+              <other_lithic_scats/>
+              <other_mounds/>
+              <other_other_house/>
+              <other_pithouses/>
+              <other_pits/>
+              <other_rock_aligns/>
+              <other_rock_piles/>
+              <other_rock_rings/>
+              <other_sherd_scats/>
+              <other_standing_stones/>
+              <other_stone_walls/>
+              <other_towers/>
+              <other_tumuli/>
+            </site_oth_chars>
+          </site_info>
+          <finds>
+            <finds_count>
+              <pottery_count>0</pottery_count>
+              <lithics_count>0</lithics_count>
+              <faunal_count>0</faunal_count>
+              <brick_count>0</brick_count>
+              <tile_count>0</tile_count>
+              <other_count>0</other_count>
+            </finds_count>
+            <finds_diagnostic>
+              <pottery_temporal/>
+              <lithics_temporal/>
+              <faunal_rem/>
+            </finds_diagnostic>
+            <pottery>
+              <other_pottery/>
+              <pot_neol/>
+              <pot_chal/>
+              <pot_bronze/>
+              <pot_iron/>
+              <pot_mongol/>
+              <pot_medieval/>
+              <pot_historic/>
+              <pot_modern/>
+            </pottery>
+            <lithics>
+              <other_lithics/>
+              <lith_lp/>
+              <lith_mp/>
+              <lith_up/>
+              <lith_epipal/>
+              <lith_neol/>
+              <lith_bronze/>
+              <lith_iron/>
+              <lith_mongol/>
+              <lith_medieval/>
+            </lithics>
+            <faunal>
+              <other_faunal_rem/>
+            </faunal>
+            <artif_notes>
+              <pottery_notes/>
+              <lithic_notes/>
+              <faunal_notes/>
+              <brick_notes/>
+              <tile_notes/>
+              <other_notes/>
+              <general_notes/>
+            </artif_notes>
+          </finds>
+          <other_images>
+            <images jr:template="">
+              <general_image/>
+            </images>
+          </other_images>
+          <meta>
+            <instanceID/>
+          </meta>
+        </site_and_feature_xlsform_V2>
+      </instance>
+      <bind nodeset="/site_and_feature_xlsform_V2/basic_inf/region" required="true()" type="select1"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/basic_inf/survey_block" required="true()" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/basic_inf/datetime" required="true()" type="dateTime"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/basic_inf/surveyor" required="true()" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/other_inf/other_region" relevant="selected( /site_and_feature_xlsform_V2/basic_inf/region , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/other_inf/other_surveyor" relevant="selected( /site_and_feature_xlsform_V2/basic_inf/surveyor , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_type" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/visibility" type="select1"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/disturbance" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/groundcover" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/slope" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/setting" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_cover/sediments" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_other/other_disturb" relevant="selected( /site_and_feature_xlsform_V2/geo_cover/disturbance , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_other/other_groundcov" relevant="selected( /site_and_feature_xlsform_V2/geo_cover/groundcover , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_other/other_setting" relevant="selected( /site_and_feature_xlsform_V2/geo_cover/setting , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/geo_other/other_sediments" relevant="selected( /site_and_feature_xlsform_V2/geo_cover/sediments , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/datum" type="geopoint"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/track" type="geotrace"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/length" type="decimal"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/width" type="decimal"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/height" type="decimal"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/spatial/site_shape" type="select1"/>
+      <bind calculate=" /site_and_feature_xlsform_V2/spatial/length  *  /site_and_feature_xlsform_V2/spatial/width  *  /site_and_feature_xlsform_V2/spatial/site_shape " nodeset="/site_and_feature_xlsform_V2/overview/site_area" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/overview/calculated_area" readonly="true()" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/overview/overview_sketch" type="binary"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/overview/overview_photo" type="binary"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_caravans" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;caravan&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_fire_pits" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;fire_pit&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_graves" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;grave&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_kurgans" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;kurgan&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_lithic_scats" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;lithic_scat&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_mounds" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;mound&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_features" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;other&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_houses" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;other_house&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_pits" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;other_pit&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_pithouses" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;pithouse&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_aligns" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;rock_alignment&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_piles" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;rock_pile&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_rings" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;rock_ring&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_sherd_scats" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;sherd_scat&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_standing_stones" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;standing_stone&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_stone_walls" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;stone_wall&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_towers" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;tower&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_counts/num_tumuli" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;tumuli&quot;)" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/caravans" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_caravans  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/fire_pits" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_fire_pits  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/lithic_scats" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_lithic_scats  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/pits" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_other_pits  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/rock_aligns" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_rock_aligns  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/rock_piles" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_rock_piles  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/rock_rings" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_rock_rings  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/sherd_scats" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_sherd_scats  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/standing_stones" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_standing_stones  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/stone_walls" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_stone_walls  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/towers" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_towers  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/graves" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_graves  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/kurgans" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_kurgans  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/other_houses" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_other_houses  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/pithouses" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_pithouses  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/mounds" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_mounds  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_chars/tumuli" relevant=" /site_and_feature_xlsform_V2/site_info/site_counts/num_tumuli  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_caravans" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/caravans , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_features" relevant="selected( /site_and_feature_xlsform_V2/site_type , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_fire_pits" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/fire_pits , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_kurgans" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/kurgans , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_graves" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/kurgans , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_lithic_scats" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/lithic_scats , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_mounds" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/mounds , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_other_house" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/other_houses , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_pithouses" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/pithouses , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_pits" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/pits , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_aligns" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/rock_aligns , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_piles" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/rock_piles , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_rings" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/rock_rings , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_sherd_scats" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/sherd_scats , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_standing_stones" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/standing_stones , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_stone_walls" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/stone_walls , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_towers" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/towers , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_tumuli" relevant="selected( /site_and_feature_xlsform_V2/site_info/site_chars/tumuli , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/pottery_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/lithics_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/faunal_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/brick_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/tile_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_count/other_count" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/pottery_count  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/lithics_count  &gt;= 1" type="select"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/finds_diagnostic/faunal_rem" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/faunal_count  &gt;= 1" type="select"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/other_pottery" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'other')" type="string"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_neol" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'neol')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_chal" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'chal')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_bronze" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'bronze')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_iron" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'iron')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_mongol" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'mongol')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_medieval" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'medieval')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_historic" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'historic')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/site_and_feature_xlsform_V2/finds/pottery/pot_modern" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal , 'modern')" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/lithics/other_lithics" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'other')" type="string"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_lp" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'lower_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_mp" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'middle_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_up" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'upper_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_epipal" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'epipal')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_neol" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'neol')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_bronze" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'chal')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_iron" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'bronze')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_mongol" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'iron')" type="int"/>
+      <bind constraint=". &lt;=  /site_and_feature_xlsform_V2/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/site_and_feature_xlsform_V2/finds/lithics/lith_medieval" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal , 'medieval')" type="int"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/faunal/other_faunal_rem" relevant="selected( /site_and_feature_xlsform_V2/finds/finds_diagnostic/faunal_rem , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/pottery_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/pottery_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/lithic_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/lithics_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/faunal_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/faunal_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/brick_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/brick_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/tile_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/tile_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/other_notes" relevant=" /site_and_feature_xlsform_V2/finds/finds_count/other_count  &gt;= 1" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/finds/artif_notes/general_notes" type="string"/>
+      <bind nodeset="/site_and_feature_xlsform_V2/other_images/images/general_image" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/site_and_feature_xlsform_V2/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/basic_inf">
+      <label>Basic information.</label>
+      <select1 appearance="minimal label" ref="/site_and_feature_xlsform_V2/basic_inf/region">
+        <label>Select the region.</label>
+        <item>
+          <label>Talgar</label>
+          <value>talgar</value>
+        </item>
+        <item>
+          <label>Issyk</label>
+          <value>issyk</value>
+        </item>
+        <item>
+          <label>Turgen</label>
+          <value>turgen</value>
+        </item>
+        <item>
+          <label>Karaturyk</label>
+          <value>karaturyk</value>
+        </item>
+        <item>
+          <label>Chilik</label>
+          <value>chilik</value>
+        </item>
+        <item>
+          <label>Ash Bulak</label>
+          <value>ash_bulak</value>
+        </item>
+        <item>
+          <label>Yunki</label>
+          <value>yunki</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/site_and_feature_xlsform_V2/basic_inf/survey_block">
+        <label>Enter the survey block number.</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/basic_inf/datetime">
+        <label>Enter date and time.</label>
+      </input>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/basic_inf/surveyor">
+        <label>Select all the personnel who recorded this site or feature.</label>
+        <item>
+          <label>Claudia</label>
+          <value>claudia_chang</value>
+        </item>
+        <item>
+          <label>Perry</label>
+          <value>perry_tourtellotte</value>
+        </item>
+        <item>
+          <label>Isaac</label>
+          <value>isaac_ullah</value>
+        </item>
+        <item>
+          <label>Sal</label>
+          <value>salvador_navarro</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+    </group>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/other_inf">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/site_and_feature_xlsform_V2/other_inf/other_region">
+        <label>Other region:</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/other_inf/other_surveyor">
+        <label>Other personnel:</label>
+      </input>
+    </group>
+    <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_type">
+      <label>Select the type(s) of archaeological sites or features present.</label>
+      <item>
+        <label>Kurgans</label>
+        <value>kurgan</value>
+      </item>
+      <item>
+        <label>Tumuli</label>
+        <value>tumuli</value>
+      </item>
+      <item>
+        <label>Other mound feature</label>
+        <value>mound</value>
+      </item>
+      <item>
+        <label>Modern/Kazakh grave</label>
+        <value>grave</value>
+      </item>
+      <item>
+        <label>Caravansarai</label>
+        <value>caravan</value>
+      </item>
+      <item>
+        <label>Animal enclosure</label>
+        <value>anim_encl</value>
+      </item>
+      <item>
+        <label>Pithouses</label>
+        <value>pithouse</value>
+      </item>
+      <item>
+        <label>Other house structure</label>
+        <value>other_house</value>
+      </item>
+      <item>
+        <label>Other pit feature</label>
+        <value>other_pit</value>
+      </item>
+      <item>
+        <label>Rock ring</label>
+        <value>rock_ring</value>
+      </item>
+      <item>
+        <label>Rock alignment</label>
+        <value>rock_alignment</value>
+      </item>
+      <item>
+        <label>Rock pile</label>
+        <value>rock_pile</value>
+      </item>
+      <item>
+        <label>Stone wall</label>
+        <value>stone_wall</value>
+      </item>
+      <item>
+        <label>Standing stone</label>
+        <value>standing_stone</value>
+      </item>
+      <item>
+        <label>Tower/monument</label>
+        <value>tower</value>
+      </item>
+      <item>
+        <label>Sherd scatter</label>
+        <value>sherd_scat</value>
+      </item>
+      <item>
+        <label>Lithic scatter</label>
+        <value>lithic_scat</value>
+      </item>
+      <item>
+        <label>Fire pit/hearth</label>
+        <value>fire_pit</value>
+      </item>
+      <item>
+        <label>Other…</label>
+        <value>other</value>
+      </item>
+    </select>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/geo_cover">
+      <label>Groundcover and geomorphological setting.</label>
+      <select1 appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/visibility">
+        <label>Select the most appropriate category for ground visibility.</label>
+        <item>
+          <label>Good ground visibility (76-100% visible)</label>
+          <value>good</value>
+        </item>
+        <item>
+          <label>Moderate ground visibility (51-75% visible)</label>
+          <value>moderate</value>
+        </item>
+        <item>
+          <label>Poor ground visibility (26-50% visible)</label>
+          <value>poor</value>
+        </item>
+        <item>
+          <label>Very poor ground visibility (1-25% visible)</label>
+          <value>very_poor</value>
+        </item>
+        <item>
+          <label>Cannot see the ground (0% visibility)</label>
+          <value>none</value>
+        </item>
+      </select1>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/disturbance">
+        <label>Select all the types of disturbances that may be present.</label>
+        <item>
+          <label>Ploughing</label>
+          <value>ploughed</value>
+        </item>
+        <item>
+          <label>Bulldozer/excavation</label>
+          <value>dozer</value>
+        </item>
+        <item>
+          <label>Erosion</label>
+          <value>erosion</value>
+        </item>
+        <item>
+          <label>Bioturbation</label>
+          <value>bioturb</value>
+        </item>
+        <item>
+          <label>Grazing/trampling</label>
+          <value>trample</value>
+        </item>
+        <item>
+          <label>Driving/roads</label>
+          <value>roads</value>
+        </item>
+        <item>
+          <label>Farming</label>
+          <value>farming</value>
+        </item>
+        <item>
+          <label>Irrigation</label>
+          <value>irrigation</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/groundcover">
+        <label>Select all groundcover conditions for the site or feature.</label>
+        <item>
+          <label>Farm field</label>
+          <value>field</value>
+        </item>
+        <item>
+          <label>Orchard</label>
+          <value>orchard</value>
+        </item>
+        <item>
+          <label>Vineyard</label>
+          <value>vineyard</value>
+        </item>
+        <item>
+          <label>Urban/developed</label>
+          <value>urban</value>
+        </item>
+        <item>
+          <label>Grasses/steppe</label>
+          <value>steppe</value>
+        </item>
+        <item>
+          <label>Desert/scrub</label>
+          <value>desert</value>
+        </item>
+        <item>
+          <label>Shrub/maquis</label>
+          <value>shrubs</value>
+        </item>
+        <item>
+          <label>Open woodland</label>
+          <value>woodland</value>
+        </item>
+        <item>
+          <label>Forest</label>
+          <value>forest</value>
+        </item>
+        <item>
+          <label>Riparian</label>
+          <value>riparian</value>
+        </item>
+        <item>
+          <label>Wetland vegetation</label>
+          <value>wetland</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/slope">
+        <label>Select the range of slopes present along the transect</label>
+        <item>
+          <label>Flat (0-5 degrees)</label>
+          <value>flat</value>
+        </item>
+        <item>
+          <label>Moderate (6-10 degrees)</label>
+          <value>moderate</value>
+        </item>
+        <item>
+          <label>Sloped (11-20 degrees)</label>
+          <value>sloped</value>
+        </item>
+        <item>
+          <label>Steep (21-45 degrees)</label>
+          <value>steep</value>
+        </item>
+        <item>
+          <label>Cliff (46-90 degrees)</label>
+          <value>cliff</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/setting">
+        <label>Select the types of geomorphological settings present at the site or feature.</label>
+        <item>
+          <label>Mountains</label>
+          <value>mountains</value>
+        </item>
+        <item>
+          <label>Hills</label>
+          <value>hills</value>
+        </item>
+        <item>
+          <label>Upper fan</label>
+          <value>upper_fan</value>
+        </item>
+        <item>
+          <label>Mid-fan</label>
+          <value>mid_fan</value>
+        </item>
+        <item>
+          <label>Lower Fan</label>
+          <value>lower_fan</value>
+        </item>
+        <item>
+          <label>Lowlands</label>
+          <value>lowlands</value>
+        </item>
+        <item>
+          <label>Valley</label>
+          <value>valley</value>
+        </item>
+        <item>
+          <label>Stream cut</label>
+          <value>stream_cut</value>
+        </item>
+        <item>
+          <label>Canyon/gorge</label>
+          <value>canyon</value>
+        </item>
+        <item>
+          <label>Alluvial terrace</label>
+          <value>alluv_terrace</value>
+        </item>
+        <item>
+          <label>Bench or strath terrace</label>
+          <value>strath_terrace</value>
+        </item>
+        <item>
+          <label>Hillslope</label>
+          <value>hillslope</value>
+        </item>
+        <item>
+          <label>Ridge or pass</label>
+          <value>ridge_pass</value>
+        </item>
+        <item>
+          <label>Peak or hilltop</label>
+          <value>peak</value>
+        </item>
+        <item>
+          <label>Swales and hillocks</label>
+          <value>swales</value>
+        </item>
+        <item>
+          <label>Basin or trough</label>
+          <value>basin</value>
+        </item>
+        <item>
+          <label>Playa</label>
+          <value>playa</value>
+        </item>
+        <item>
+          <label>Mesa/plateau</label>
+          <value>mesa</value>
+        </item>
+        <item>
+          <label>Wetlands</label>
+          <value>wetlands</value>
+        </item>
+        <item>
+          <label>Paleochannel</label>
+          <value>paleochannel</value>
+        </item>
+        <item>
+          <label>Paleo-lake shore</label>
+          <value>paleoshore</value>
+        </item>
+        <item>
+          <label>Relect landform</label>
+          <value>relect_lform</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/geo_cover/sediments">
+        <label>Select all the sediments/depositional environments of the site or feature.</label>
+        <item>
+          <label>Alluvial stream deposits</label>
+          <value>alluv_stream</value>
+        </item>
+        <item>
+          <label>Alluvial fan deposits</label>
+          <value>alluv_fan</value>
+        </item>
+        <item>
+          <label>Alluvial floodplain deposits</label>
+          <value>alluv_floodplain</value>
+        </item>
+        <item>
+          <label>Aeolian loess deposits</label>
+          <value>aeol_loess</value>
+        </item>
+        <item>
+          <label>Aeolian dune deposits</label>
+          <value>aeol_dunes</value>
+        </item>
+        <item>
+          <label>Colluvial slope wash or scree</label>
+          <value>coll_slopewash</value>
+        </item>
+        <item>
+          <label>Colluvial landslide or mass wasting</label>
+          <value>coll_landslide</value>
+        </item>
+        <item>
+          <label>Anthropogenic deposits</label>
+          <value>anthropogenic</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+    </group>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/geo_other">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/site_and_feature_xlsform_V2/geo_other/other_disturb">
+        <label>Other disturbances:</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/geo_other/other_groundcov">
+        <label>Other groundcover:</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/geo_other/other_setting">
+        <label>Other geomorphological setting:</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/geo_other/other_sediments">
+        <label>Other sediments/depositional environments::</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/spatial">
+      <label>Collect spatial information about the site or feature.</label>
+      <input ref="/site_and_feature_xlsform_V2/spatial/datum">
+        <label>Record a datum waypoint for the site or feature.</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/spatial/track">
+        <label>Record a line or polygon GPS tracklog for the site or feature (if necessary)</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/spatial/length">
+        <label>Enter the approximate length of the longest dimension of the site or feature.</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/spatial/width">
+        <label>Enter the approximate width of the shortest dimension of the site or feature.</label>
+      </input>
+      <input ref="/site_and_feature_xlsform_V2/spatial/height">
+        <label>Enter the approximate height of the feature</label>
+      </input>
+      <select1 ref="/site_and_feature_xlsform_V2/spatial/site_shape">
+        <label>Choose the approximate shape of the site or feature (for calculating site area).</label>
+        <item>
+          <label>Elliptical or circular</label>
+          <value>3.145</value>
+        </item>
+        <item>
+          <label>Rectilinear or square</label>
+          <value>1</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/site_and_feature_xlsform_V2/overview">
+      <label>Basic overview of site or feature layout.</label>
+      <input ref="/site_and_feature_xlsform_V2/overview/calculated_area">
+        <label>Calculated area of the site (length * width) = <output value=" /site_and_feature_xlsform_V2/overview/site_area "/></label></input>
+      <upload appearance="draw" mediatype="image/*" ref="/site_and_feature_xlsform_V2/overview/overview_sketch">
+        <label>Draw a general sketch of the site or feature.</label>
+      </upload>
+      <upload mediatype="image/*" ref="/site_and_feature_xlsform_V2/overview/overview_photo">
+        <label>Take an overview photo of the site.</label>
+      </upload>
+    </group>
+    <group ref="/site_and_feature_xlsform_V2/site_info">
+      <label>Information about the site.</label>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/site_info/site_counts">
+        <label>Record the number of each type of site present:</label>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_caravans">
+          <label>Number of caravansarai encountered</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_fire_pits">
+          <label>Number of fire pits.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_graves">
+          <label>Number of modern/Kazakh graves encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_kurgans">
+          <label>Number of kurgans encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_lithic_scats">
+          <label>Number of lithic scatters.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_mounds">
+          <label>Number of other mounds encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_features">
+          <label>Number of “other” features.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_houses">
+          <label>Number of other houses encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_other_pits">
+          <label>Number of other pits.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_pithouses">
+          <label>Number of pithouses encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_aligns">
+          <label>Number of rock alignments.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_piles">
+          <label>Number of rock piles.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_rock_rings">
+          <label>Number of rock rings.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_sherd_scats">
+          <label>Number of sherd scatters.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_standing_stones">
+          <label>Number of standing stones.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_stone_walls">
+          <label>Number of stone walls.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_towers">
+          <label>Number of towers or monuments.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_counts/num_tumuli">
+          <label>Number of tumuli encountered.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/site_info/site_chars">
+        <label>Describe the characteristics of the sites:</label>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/caravans">
+          <label>Select all characteristics of caravansarai encounteed.</label>
+          <item>
+            <label>Earth embankments</label>
+            <value>embankments</value>
+          </item>
+          <item>
+            <label>Ditches</label>
+            <value>ditches</value>
+          </item>
+          <item>
+            <label>Earth mounds</label>
+            <value>mounds</value>
+          </item>
+          <item>
+            <label>Moat</label>
+            <value>moat</value>
+          </item>
+          <item>
+            <label>Tower</label>
+            <value>tower</value>
+          </item>
+          <item>
+            <label>Road</label>
+            <value>roads</value>
+          </item>
+          <item>
+            <label>Gate</label>
+            <value>gate</value>
+          </item>
+          <item>
+            <label>Stone architecture</label>
+            <value>stone_archi</value>
+          </item>
+          <item>
+            <label>Square layout</label>
+            <value>square</value>
+          </item>
+          <item>
+            <label>Rectangular layout</label>
+            <value>rectang</value>
+          </item>
+          <item>
+            <label>Round layout</label>
+            <value>round</value>
+          </item>
+          <item>
+            <label>Elliptical layout</label>
+            <value>elliptical</value>
+          </item>
+          <item>
+            <label>Irregular layout</label>
+            <value>irregular</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other…</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/fire_pits">
+          <label>Select all characteristics of fire pits or hearths encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/lithic_scats">
+          <label>Select all characteristics of lithic scatters encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/pits">
+          <label>Select all characteristics of pits encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/rock_aligns">
+          <label>Select all characteristics of rock alignments encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/rock_piles">
+          <label>Select all characteristics of rock piles encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/rock_rings">
+          <label>Select all characteristics of rock rings encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/sherd_scats">
+          <label>Select all characteristics of sherd scatters encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/standing_stones">
+          <label>Select all characteristics of standing stones encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/stone_walls">
+          <label>Select all characteristics of stone walls encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/towers">
+          <label>Select all characteristics of towers encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/graves">
+          <label>Select all characteristics of modern/Kazakh graves encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/kurgans">
+          <label>Select all characterstics of kurgans encountered.</label>
+          <item>
+            <label>Conical shape</label>
+            <value>conical</value>
+          </item>
+          <item>
+            <label>Mounded shape</label>
+            <value>mounded</value>
+          </item>
+          <item>
+            <label>Square/Rectangular shape</label>
+            <value>square</value>
+          </item>
+          <item>
+            <label>Large (greater than 10 m diameter)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Medium (5-10 m diameter)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Small (less than 5 m diameter)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Earth mound only (no rocks)</label>
+            <value>earth</value>
+          </item>
+          <item>
+            <label>Rock cap</label>
+            <value>rock_cap</value>
+          </item>
+          <item>
+            <label>Rock ring</label>
+            <value>rock_ring</value>
+          </item>
+          <item>
+            <label>Double rock ring</label>
+            <value>doub_rock_ring</value>
+          </item>
+          <item>
+            <label>Rock cluster</label>
+            <value>rock_cluster</value>
+          </item>
+          <item>
+            <label>Ditch (around mound)</label>
+            <value>ditch</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally flattened)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/other_houses">
+          <label>Select all characteristics of other houses encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Plaster floor</label>
+            <value>plaster_floor</value>
+          </item>
+          <item>
+            <label>Cobble floor</label>
+            <value>cobble_floor</value>
+          </item>
+          <item>
+            <label>Dirt or mud floor</label>
+            <value>dirt_floor</value>
+          </item>
+          <item>
+            <label>Stone architecture</label>
+            <value>stone_walls</value>
+          </item>
+          <item>
+            <label>Brick or mudbrick architecture</label>
+            <value>brick_walls</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/pithouses">
+          <label>Select all characteristics of pithouses encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally removed)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Plaster floor</label>
+            <value>plaster_floor</value>
+          </item>
+          <item>
+            <label>Cobble floor</label>
+            <value>cobble_floor</value>
+          </item>
+          <item>
+            <label>Dirt or mud floor</label>
+            <value>dirt_floor</value>
+          </item>
+          <item>
+            <label>Stone architecture</label>
+            <value>stone_walls</value>
+          </item>
+          <item>
+            <label>Brick or mudbrick architecture</label>
+            <value>brick_walls</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/mounds">
+          <label>Select all characteristics of other mounds encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally flattened)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/site_info/site_chars/tumuli">
+          <label>Select all characteristics of tumuli encountered.</label>
+          <item>
+            <label>Small (0-2m)</label>
+            <value>small</value>
+          </item>
+          <item>
+            <label>Medium (2-4m)</label>
+            <value>medium</value>
+          </item>
+          <item>
+            <label>Large (4-6m)</label>
+            <value>large</value>
+          </item>
+          <item>
+            <label>Extra large (larger than 6m)</label>
+            <value>ext_large</value>
+          </item>
+          <item>
+            <label>Intact (undamaged)</label>
+            <value>intact</value>
+          </item>
+          <item>
+            <label>Eroded (seen in section)</label>
+            <value>eroded</value>
+          </item>
+          <item>
+            <label>Looted (looter pits)</label>
+            <value>looted</value>
+          </item>
+          <item>
+            <label>Damaged (bulldozed or dug out)</label>
+            <value>damaged</value>
+          </item>
+          <item>
+            <label>Destroyed (totally flattened)</label>
+            <value>destroyed</value>
+          </item>
+          <item>
+            <label>Carbon or ash present</label>
+            <value>carbon</value>
+          </item>
+          <item>
+            <label>Quartz sand present</label>
+            <value>quartz</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars">
+        <label>Describe the “other” characteristics:</label>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_caravans">
+          <label>Other characteristics of caravansarai:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_features">
+          <label>Briefly describe any “other” features that were encountered:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_fire_pits">
+          <label>Other characteristics of fire pits hearth:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_kurgans">
+          <label>Other characteristics of kurgans:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_graves">
+          <label>Other characteristics of modern/Kazakh graves:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_lithic_scats">
+          <label>Other characteristics of lithic scatters:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_mounds">
+          <label>Other characteristics of mounds:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_other_house">
+          <label>Other characteristics of other houses:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_pithouses">
+          <label>Other characteristics of pithouses:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_pits">
+          <label>Other characteristics of pits:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_aligns">
+          <label>Other characteristics of rock alignments:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_piles">
+          <label>Other characteristics of rock piles:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_rock_rings">
+          <label>Other characteristics of rock rings:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_sherd_scats">
+          <label>Other characteristics of sherd scatters:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_standing_stones">
+          <label>Other characteristics of standing stones:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_stone_walls">
+          <label>Other characteristics of stone walls:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_towers">
+          <label>Other characteristics of towers:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/site_info/site_oth_chars/other_tumuli">
+          <label>Other characteristics of tumuli:</label>
+        </input>
+      </group>
+    </group>
+    <group ref="/site_and_feature_xlsform_V2/finds">
+      <label>Artifacts present at the site or feature.</label>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/finds_count">
+        <label>Record the number of each type of artifact present</label>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/pottery_count">
+          <label>Enter the total count of all potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/lithics_count">
+          <label>Enter the total count of all lithic material.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/faunal_count">
+          <label>Total count of all faunal remains encountered.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/brick_count">
+          <label>Number of bricks or mudbricks.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/tile_count">
+          <label>Number of tiles.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/finds_count/other_count">
+          <label>Number of other artifacts.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/finds_diagnostic">
+        <label>Record the presence of any diagnostic artfacts.</label>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/finds/finds_diagnostic/pottery_temporal">
+          <label>Select time periods of any diagnostic potsherds.</label>
+          <item>
+            <label>Neolithic</label>
+            <value>neol</value>
+          </item>
+          <item>
+            <label>Chalcolithic</label>
+            <value>chal</value>
+          </item>
+          <item>
+            <label>Bronze Age</label>
+            <value>bronze</value>
+          </item>
+          <item>
+            <label>Iron Age</label>
+            <value>iron</value>
+          </item>
+          <item>
+            <label>Mongol</label>
+            <value>mongol</value>
+          </item>
+          <item>
+            <label>Medieval</label>
+            <value>medieval</value>
+          </item>
+          <item>
+            <label>Historic</label>
+            <value>historic</value>
+          </item>
+          <item>
+            <label>Modern</label>
+            <value>modern</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/finds/finds_diagnostic/lithics_temporal">
+          <label>Select time periods of any diagnostic lithics.</label>
+          <item>
+            <label>Lower Paleolithic</label>
+            <value>lower_paleo</value>
+          </item>
+          <item>
+            <label>Middle Paleolithic</label>
+            <value>middle_paleo</value>
+          </item>
+          <item>
+            <label>Upper Paleolithic</label>
+            <value>upper_paleo</value>
+          </item>
+          <item>
+            <label>Epipaleolithic</label>
+            <value>epipal</value>
+          </item>
+          <item>
+            <label>Neolithic</label>
+            <value>neol</value>
+          </item>
+          <item>
+            <label>Chalcolithic</label>
+            <value>chal</value>
+          </item>
+          <item>
+            <label>Bronze Age</label>
+            <value>bronze</value>
+          </item>
+          <item>
+            <label>Iron Age</label>
+            <value>iron</value>
+          </item>
+          <item>
+            <label>Medieval</label>
+            <value>medieval</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/site_and_feature_xlsform_V2/finds/finds_diagnostic/faunal_rem">
+          <label>Select all identified species.</label>
+          <item>
+            <label>Ovicaprid (goat/sheep)</label>
+            <value>ovicaprid</value>
+          </item>
+          <item>
+            <label>Bovid (cow/yak)</label>
+            <value>bovid</value>
+          </item>
+          <item>
+            <label>Equid (horse/donkey)</label>
+            <value>equid</value>
+          </item>
+          <item>
+            <label>Camelid (camel)</label>
+            <value>camelid</value>
+          </item>
+          <item>
+            <label>Sus (pig/boar)</label>
+            <value>sus</value>
+          </item>
+          <item>
+            <label>Cervid (deer)</label>
+            <value>cervid</value>
+          </item>
+          <item>
+            <label>Canid (dog/wolf/fox)</label>
+            <value>canid</value>
+          </item>
+          <item>
+            <label>Felid (cat/wildcat)</label>
+            <value>felid</value>
+          </item>
+          <item>
+            <label>Rodentia (rodents)</label>
+            <value>rodentia</value>
+          </item>
+          <item>
+            <label>Bird</label>
+            <value>bird</value>
+          </item>
+          <item>
+            <label>Fish</label>
+            <value>fish</value>
+          </item>
+          <item>
+            <label>Mollusk (shell)</label>
+            <value>mollusk</value>
+          </item>
+          <item>
+            <label>Turtle shell</label>
+            <value>turtle</value>
+          </item>
+          <item>
+            <label>Unidentified small animal bone</label>
+            <value>unident_small</value>
+          </item>
+          <item>
+            <label>Unidentified large animal bone</label>
+            <value>unident_large</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/pottery">
+        <label>Details of pottery finds.</label>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/other_pottery">
+          <label>Other diagnostic pottery:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_neol">
+          <label>Count of Neolithic potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_chal">
+          <label>Count of Chalcolithic potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_bronze">
+          <label>Count of Bronze Age potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_iron">
+          <label>Count of Iron Age potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_mongol">
+          <label>Count of Mongol period potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_medieval">
+          <label>Count of Medieval potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_historic">
+          <label>Count of Historic period potsherds.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/pottery/pot_modern">
+          <label>Count of Modern potsherds.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/lithics">
+        <label>Details of lithic finds.</label>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/other_lithics">
+          <label>Other diagnostic lithics:</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_lp">
+          <label>Count of Lower Paleolithic lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_mp">
+          <label>Count of Middle Paleolithic lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_up">
+          <label>Count of Upper Paleolithic lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_epipal">
+          <label>Count of Epipaleolithic lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_neol">
+          <label>Count of Neolithic lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_bronze">
+          <label>Count of Bronze Age lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_iron">
+          <label>Count of Iron Age lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_mongol">
+          <label>Count of Mongol period lithics.</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/lithics/lith_medieval">
+          <label>Count of Medieval lithics.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/faunal">
+        <label>Details of faunal finds.</label>
+        <input ref="/site_and_feature_xlsform_V2/finds/faunal/other_faunal_rem">
+          <label>Other identifiable faunal remains:</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/site_and_feature_xlsform_V2/finds/artif_notes">
+        <label>Take some notes on the various artifacts.</label>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/pottery_notes">
+          <label>General notes on pottery</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/lithic_notes">
+          <label>General notes on lithics</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/faunal_notes">
+          <label>General notes on fauna</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/brick_notes">
+          <label>General notes on bricks or mudbricks</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/tile_notes">
+          <label>General notes on tiles</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/other_notes">
+          <label>General notes on “other” artifacts</label>
+        </input>
+        <input ref="/site_and_feature_xlsform_V2/finds/artif_notes/general_notes">
+          <label>Any additional notes about the site, feature, or artifacts.</label>
+        </input>
+      </group>
+    </group>
+    <group ref="/site_and_feature_xlsform_V2/other_images">
+      <label>Additional photos.</label>
+      <group ref="/site_and_feature_xlsform_V2/other_images/images">
+        <label>Any additional photographs relevant to the site record.</label>
+        <repeat nodeset="/site_and_feature_xlsform_V2/other_images/images">
+          <upload mediatype="image/*" ref="/site_and_feature_xlsform_V2/other_images/images/general_image">
+            <label>Take a photo.</label>
+          </upload>
+        </repeat>
+      </group>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,1059 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>KAAE Survey Transect Record</h:title>
+    <model>
+      <instance>
+        <survey_tsect_xlsform id="KAAE_survey_transect_record">
+          <basic_inf>
+            <region/>
+            <survey_block/>
+            <transect_num/>
+            <datetime/>
+            <surveyor/>
+          </basic_inf>
+          <other_inf>
+            <other_region/>
+            <other_surveyor/>
+          </other_inf>
+          <transect_info>
+            <tsect_spacing>20</tsect_spacing>
+            <sweep_width>5</sweep_width>
+            <visibility/>
+          </transect_info>
+          <geo_cover>
+            <disturbance/>
+            <groundcover/>
+            <slope/>
+            <setting/>
+            <sediments/>
+          </geo_cover>
+          <geo_other>
+            <other_disturb/>
+            <other_groundcov/>
+            <other_setting/>
+            <other_sediments/>
+          </geo_other>
+          <transect_start>
+            <start_tsect/>
+            <start_image/>
+          </transect_start>
+          <start_tracklog/>
+          <finds>
+            <finds_count>
+              <pottery_count/>
+              <lithics_count/>
+              <faunal_count/>
+              <brick_count/>
+              <tile_count/>
+              <other_count/>
+            </finds_count>
+            <finds_diagnostic>
+              <pottery_temporal/>
+              <lithics_temporal/>
+              <faunal_rem/>
+            </finds_diagnostic>
+            <pottery>
+              <other_pottery/>
+              <pot_neol/>
+              <pot_chal/>
+              <pot_bronze/>
+              <pot_iron/>
+              <pot_mongol/>
+              <pot_medieval/>
+              <pot_historic/>
+              <pot_modern/>
+            </pottery>
+            <lithics>
+              <other_lithics/>
+              <lith_lp/>
+              <lith_mp/>
+              <lith_up/>
+              <lith_epipal/>
+              <lith_neol/>
+              <lith_bronze/>
+              <lith_iron/>
+              <lith_mongol/>
+              <lith_medieval/>
+            </lithics>
+            <faunal>
+              <other_faunal_rem/>
+            </faunal>
+            <artif_notes>
+              <pottery_notes/>
+              <lithic_notes/>
+              <faunal_notes/>
+              <brick_notes/>
+              <tile_notes/>
+              <other_notes/>
+              <general_notes/>
+            </artif_notes>
+          </finds>
+          <features/>
+          <other_features/>
+          <arch_features>
+            <num_caravans/>
+            <num_fire_pits/>
+            <num_kurgans/>
+            <num_graves/>
+            <num_lithic_scats/>
+            <num_mounds/>
+            <num_other_pits/>
+            <num_pithouses/>
+            <num_rock_aligns/>
+            <num_rock_piles/>
+            <num_rock_rings/>
+            <num_sherd_scats/>
+            <num_standing_stones/>
+            <num_stone_walls/>
+            <num_towers/>
+            <num_tumuli/>
+            <num_other_feats/>
+          </arch_features>
+          <tracklog_end>
+            <end_tracklog/>
+            <track_name/>
+            <tsect_length/>
+          </tracklog_end>
+          <end_transect>
+            <tsect_area/>
+            <calculated_area/>
+            <end_tsect/>
+            <end_image/>
+          </end_transect>
+          <general_notes/>
+          <sketch/>
+          <other_images>
+            <images jr:template="">
+              <general_image/>
+            </images>
+          </other_images>
+          <meta>
+            <instanceID/>
+          </meta>
+        </survey_tsect_xlsform>
+      </instance>
+      <bind nodeset="/survey_tsect_xlsform/basic_inf/region" required="true()" type="select1"/>
+      <bind nodeset="/survey_tsect_xlsform/basic_inf/survey_block" required="true()" type="int"/>
+      <bind constraint=". &gt; 0" jr:constraintMsg="Must be a value greater than 0." nodeset="/survey_tsect_xlsform/basic_inf/transect_num" required="true()" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/basic_inf/datetime" required="true()" type="dateTime"/>
+      <bind nodeset="/survey_tsect_xlsform/basic_inf/surveyor" required="true()" type="select1"/>
+      <bind nodeset="/survey_tsect_xlsform/other_inf/other_region" relevant="selected( /survey_tsect_xlsform/basic_inf/region , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/other_inf/other_surveyor" relevant="selected( /survey_tsect_xlsform/basic_inf/surveyor , &quot;other&quot;)" type="string"/>
+      <bind constraint=". &gt; 0" jr:constraintMsg="Must be a value greater than 0." nodeset="/survey_tsect_xlsform/transect_info/tsect_spacing" required="true()" type="decimal"/>
+      <bind constraint=". &gt; 0" jr:constraintMsg="Must be a value greater than 0." nodeset="/survey_tsect_xlsform/transect_info/sweep_width" required="true()" type="decimal"/>
+      <bind nodeset="/survey_tsect_xlsform/transect_info/visibility" type="select1"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_cover/disturbance" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_cover/groundcover" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_cover/slope" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_cover/setting" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_cover/sediments" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_other/other_disturb" relevant="selected( /survey_tsect_xlsform/geo_cover/disturbance , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_other/other_groundcov" relevant="selected( /survey_tsect_xlsform/geo_cover/groundcover , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_other/other_setting" relevant="selected( /survey_tsect_xlsform/geo_cover/setting , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/geo_other/other_sediments" relevant="selected( /survey_tsect_xlsform/geo_cover/sediments , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/transect_start/start_tsect" type="geopoint"/>
+      <bind nodeset="/survey_tsect_xlsform/transect_start/start_image" type="binary"/>
+      <bind nodeset="/survey_tsect_xlsform/start_tracklog" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/pottery_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/lithics_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/faunal_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/brick_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/tile_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_count/other_count" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal" relevant=" /survey_tsect_xlsform/finds/finds_count/pottery_count  &gt;= 1" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal" relevant=" /survey_tsect_xlsform/finds/finds_count/lithics_count  &gt;= 1" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/finds_diagnostic/faunal_rem" relevant=" /survey_tsect_xlsform/finds/finds_count/faunal_count  &gt;= 1" type="select"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/other_pottery" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'other')" type="string"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_neol" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'neol')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_chal" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'chal')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_bronze" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'bronze')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_iron" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'iron')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_mongol" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'mongol')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_medieval" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'medieval')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_historic" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'historic')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/pottery_count " jr:constraintMsg="Your count cannot exceed the total number of pottery counted." nodeset="/survey_tsect_xlsform/finds/pottery/pot_modern" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal , 'modern')" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/lithics/other_lithics" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'other')" type="string"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_lp" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'lower_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_mp" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'middle_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_up" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'upper_paleo')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_epipal" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'epipal')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_neol" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'neol')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_bronze" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'chal')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_iron" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'bronze')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_mongol" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'iron')" type="int"/>
+      <bind constraint=". &lt;=  /survey_tsect_xlsform/finds/finds_count/lithics_count " jr:constraintMsg="Your count cannot exceed the total number of lithics counted." nodeset="/survey_tsect_xlsform/finds/lithics/lith_medieval" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal , 'medieval')" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/faunal/other_faunal_rem" relevant="selected( /survey_tsect_xlsform/finds/finds_diagnostic/faunal_rem , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/pottery_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/pottery_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/lithic_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/lithics_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/faunal_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/faunal_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/brick_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/brick_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/tile_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/tile_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/other_notes" relevant=" /survey_tsect_xlsform/finds/finds_count/other_count  &gt;= 1" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/finds/artif_notes/general_notes" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/features" type="select"/>
+      <bind nodeset="/survey_tsect_xlsform/other_features" relevant="selected( /survey_tsect_xlsform/features , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_caravans" relevant="selected( /survey_tsect_xlsform/features , &quot;caravan&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_fire_pits" relevant="selected( /survey_tsect_xlsform/features , &quot;fire_pit&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_kurgans" relevant="selected( /survey_tsect_xlsform/features , &quot;kurgan&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_graves" relevant="selected( /survey_tsect_xlsform/features , &quot;grave&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_lithic_scats" relevant="selected( /survey_tsect_xlsform/features , &quot;lithic_scat&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_mounds" relevant="selected( /survey_tsect_xlsform/features , &quot;mound&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_other_pits" relevant="selected( /survey_tsect_xlsform/features , &quot;other_pit&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_pithouses" relevant="selected( /survey_tsect_xlsform/features , &quot;pithouse&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_rock_aligns" relevant="selected( /survey_tsect_xlsform/features , &quot;rock_alignment&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_rock_piles" relevant="selected( /survey_tsect_xlsform/features , &quot;rock_pile&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_rock_rings" relevant="selected( /survey_tsect_xlsform/features , &quot;rock_ring&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_sherd_scats" relevant="selected( /survey_tsect_xlsform/features , &quot;sherd_scat&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_standing_stones" relevant="selected( /survey_tsect_xlsform/features , &quot;standing_stone&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_stone_walls" relevant="selected( /survey_tsect_xlsform/features , &quot;stone_wall&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_towers" relevant="selected( /survey_tsect_xlsform/features , &quot;tower&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_tumuli" relevant="selected( /survey_tsect_xlsform/features , &quot;tumuli&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/arch_features/num_other_feats" relevant="selected( /survey_tsect_xlsform/features , &quot;other&quot;)" type="int"/>
+      <bind nodeset="/survey_tsect_xlsform/tracklog_end/end_tracklog" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/tracklog_end/track_name" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/tracklog_end/tsect_length" type="decimal"/>
+      <bind calculate=" /survey_tsect_xlsform/tracklog_end/tsect_length  *  /survey_tsect_xlsform/transect_info/sweep_width " nodeset="/survey_tsect_xlsform/end_transect/tsect_area" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/end_transect/calculated_area" readonly="true()" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/end_transect/end_tsect" type="geopoint"/>
+      <bind nodeset="/survey_tsect_xlsform/end_transect/end_image" type="binary"/>
+      <bind nodeset="/survey_tsect_xlsform/general_notes" type="string"/>
+      <bind nodeset="/survey_tsect_xlsform/sketch" type="binary"/>
+      <bind nodeset="/survey_tsect_xlsform/other_images/images/general_image" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/survey_tsect_xlsform/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/basic_inf">
+      <label>Basic information.</label>
+      <select1 appearance="minimal label" ref="/survey_tsect_xlsform/basic_inf/region">
+        <label>Select the region.</label>
+        <item>
+          <label>Talgar</label>
+          <value>talgar</value>
+        </item>
+        <item>
+          <label>Issyk</label>
+          <value>issyk</value>
+        </item>
+        <item>
+          <label>Turgen</label>
+          <value>turgen</value>
+        </item>
+        <item>
+          <label>Karaturyk</label>
+          <value>karaturyk</value>
+        </item>
+        <item>
+          <label>Chilik</label>
+          <value>chilik</value>
+        </item>
+        <item>
+          <label>Ash Bulak</label>
+          <value>ash_bulak</value>
+        </item>
+        <item>
+          <label>Yunki</label>
+          <value>yunki</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/survey_tsect_xlsform/basic_inf/survey_block">
+        <label>Enter the survey block number.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/basic_inf/transect_num">
+        <label>Enter the transect number</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/basic_inf/datetime">
+        <label>Enter date and a time of transect.</label>
+      </input>
+      <select1 appearance="minimal label" ref="/survey_tsect_xlsform/basic_inf/surveyor">
+        <label>Surveyor:</label>
+        <item>
+          <label>Claudia</label>
+          <value>claudia_chang</value>
+        </item>
+        <item>
+          <label>Perry</label>
+          <value>perry_tourtellotte</value>
+        </item>
+        <item>
+          <label>Isaac</label>
+          <value>isaac_ullah</value>
+        </item>
+        <item>
+          <label>Sal</label>
+          <value>salvador_navarro</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/other_inf">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/survey_tsect_xlsform/other_inf/other_region">
+        <label>Other region:</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/other_inf/other_surveyor">
+        <label>Other surveyor;</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/transect_info">
+      <label>Basic transect information</label>
+      <input ref="/survey_tsect_xlsform/transect_info/tsect_spacing">
+        <label>Enter the spacing of transects (meters)</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/transect_info/sweep_width">
+        <label>Enter the sweep width of the transect (meters)</label>
+      </input>
+      <select1 appearance="minimal label" ref="/survey_tsect_xlsform/transect_info/visibility">
+        <label>Select the most appropriate category for ground visibility.</label>
+        <item>
+          <label>Good ground visibility (76-100% visible)</label>
+          <value>good</value>
+        </item>
+        <item>
+          <label>Moderate ground visibility (51-75% visible)</label>
+          <value>moderate</value>
+        </item>
+        <item>
+          <label>Poor ground visibility (26-50% visible)</label>
+          <value>poor</value>
+        </item>
+        <item>
+          <label>Very poor ground visibility (1-25% visible)</label>
+          <value>very_poor</value>
+        </item>
+        <item>
+          <label>Cannot see the ground (0% visibility)</label>
+          <value>none</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/geo_cover">
+      <label>Groundcover and geomorphological setting.</label>
+      <select appearance="minimal label" ref="/survey_tsect_xlsform/geo_cover/disturbance">
+        <label>Select all the types of disturbances that may be present.</label>
+        <item>
+          <label>Ploughing</label>
+          <value>ploughed</value>
+        </item>
+        <item>
+          <label>Bulldozer/excavation</label>
+          <value>dozer</value>
+        </item>
+        <item>
+          <label>Erosion</label>
+          <value>erosion</value>
+        </item>
+        <item>
+          <label>Bioturbation</label>
+          <value>bioturb</value>
+        </item>
+        <item>
+          <label>Grazing/trampling</label>
+          <value>trample</value>
+        </item>
+        <item>
+          <label>Driving/roads</label>
+          <value>roads</value>
+        </item>
+        <item>
+          <label>Farming</label>
+          <value>farming</value>
+        </item>
+        <item>
+          <label>Irrigation</label>
+          <value>irrigation</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/survey_tsect_xlsform/geo_cover/groundcover">
+        <label>Select all groundcover conditions for the transect.</label>
+        <item>
+          <label>Farm field</label>
+          <value>field</value>
+        </item>
+        <item>
+          <label>Orchard</label>
+          <value>orchard</value>
+        </item>
+        <item>
+          <label>Vineyard</label>
+          <value>vineyard</value>
+        </item>
+        <item>
+          <label>Urban/developed</label>
+          <value>urban</value>
+        </item>
+        <item>
+          <label>Grasses</label>
+          <value>steppe</value>
+        </item>
+        <item>
+          <label>Desert/scrub</label>
+          <value>desert</value>
+        </item>
+        <item>
+          <label>Shrub/maquis</label>
+          <value>shrubs</value>
+        </item>
+        <item>
+          <label>Open woodland</label>
+          <value>woodland</value>
+        </item>
+        <item>
+          <label>Forest</label>
+          <value>forest</value>
+        </item>
+        <item>
+          <label>Riparian</label>
+          <value>riparian</value>
+        </item>
+        <item>
+          <label>Wetland vegetation</label>
+          <value>wetland</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/survey_tsect_xlsform/geo_cover/slope">
+        <label>Select the range of slopes present along the transect</label>
+        <item>
+          <label>Flat (0-5 degrees)</label>
+          <value>flat</value>
+        </item>
+        <item>
+          <label>Moderate (6-10 degrees)</label>
+          <value>moderate</value>
+        </item>
+        <item>
+          <label>Sloped (11-20 degrees)</label>
+          <value>sloped</value>
+        </item>
+        <item>
+          <label>Steep (21-45 degrees)</label>
+          <value>steep</value>
+        </item>
+        <item>
+          <label>Cliff (46-90 degrees)</label>
+          <value>cliff</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/survey_tsect_xlsform/geo_cover/setting">
+        <label>Select the types of geomorphological settings present along the transect.</label>
+        <item>
+          <label>Mountains</label>
+          <value>mountains</value>
+        </item>
+        <item>
+          <label>Hills</label>
+          <value>hills</value>
+        </item>
+        <item>
+          <label>Upper fan</label>
+          <value>upper_fan</value>
+        </item>
+        <item>
+          <label>Mid-fan</label>
+          <value>mid_fan</value>
+        </item>
+        <item>
+          <label>Lower Fan</label>
+          <value>lower_fan</value>
+        </item>
+        <item>
+          <label>Lowlands</label>
+          <value>lowlands</value>
+        </item>
+        <item>
+          <label>Valley</label>
+          <value>valley</value>
+        </item>
+        <item>
+          <label>Stream cut</label>
+          <value>stream_cut</value>
+        </item>
+        <item>
+          <label>Canyon/gorge</label>
+          <value>canyon</value>
+        </item>
+        <item>
+          <label>Alluvial terrace</label>
+          <value>alluv_terrace</value>
+        </item>
+        <item>
+          <label>Bench or strath terrace</label>
+          <value>strath_terrace</value>
+        </item>
+        <item>
+          <label>Hillslope</label>
+          <value>hillslope</value>
+        </item>
+        <item>
+          <label>Ridge or pass</label>
+          <value>ridge_pass</value>
+        </item>
+        <item>
+          <label>Peak or hilltop</label>
+          <value>peak</value>
+        </item>
+        <item>
+          <label>Swales and hillocks</label>
+          <value>swales</value>
+        </item>
+        <item>
+          <label>Basin or trough</label>
+          <value>basin</value>
+        </item>
+        <item>
+          <label>Playa</label>
+          <value>playa</value>
+        </item>
+        <item>
+          <label>Mesa/plateau</label>
+          <value>mesa</value>
+        </item>
+        <item>
+          <label>Wetlands</label>
+          <value>wetlands</value>
+        </item>
+        <item>
+          <label>Paleochannel</label>
+          <value>paleochannel</value>
+        </item>
+        <item>
+          <label>Paleo-lake shore</label>
+          <value>paleoshore</value>
+        </item>
+        <item>
+          <label>Relect landform</label>
+          <value>relect_lform</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/survey_tsect_xlsform/geo_cover/sediments">
+        <label>Select all the sediments/depositional environments the transect crosses.</label>
+        <item>
+          <label>Alluvial stream deposits</label>
+          <value>alluv_stream</value>
+        </item>
+        <item>
+          <label>Alluvial fan deposits</label>
+          <value>alluv_fan</value>
+        </item>
+        <item>
+          <label>Alluvial floodplain deposits</label>
+          <value>alluv_floodplain</value>
+        </item>
+        <item>
+          <label>Aeolian loess deposits</label>
+          <value>aeol_loess</value>
+        </item>
+        <item>
+          <label>Aeolian dune deposits</label>
+          <value>aeol_dunes</value>
+        </item>
+        <item>
+          <label>Colluvial slope wash or scree</label>
+          <value>coll_slopewash</value>
+        </item>
+        <item>
+          <label>Colluvial landslide or mass wasting</label>
+          <value>coll_landslide</value>
+        </item>
+        <item>
+          <label>Anthropogenic deposits</label>
+          <value>anthropogenic</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+    </group>
+    <group ref="/survey_tsect_xlsform/geo_other">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/survey_tsect_xlsform/geo_other/other_disturb">
+        <label>Other disturbances:</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/geo_other/other_groundcov">
+        <label>Other groundcover:</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/geo_other/other_setting">
+        <label>Other geomorphological setting:</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/geo_other/other_sediments">
+        <label>Other sediments/depositional environments::</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/transect_start">
+      <label>Start of transect.</label>
+      <input ref="/survey_tsect_xlsform/transect_start/start_tsect">
+        <label>Record a waypoint for start of transect.</label>
+      </input>
+      <upload mediatype="image/*" ref="/survey_tsect_xlsform/transect_start/start_image">
+        <label>Take a picture of the transect in front of you.</label>
+      </upload>
+    </group>
+    <trigger ref="/survey_tsect_xlsform/start_tracklog">
+      <label>Start a track in the GPS logger **NOW**.</label>
+    </trigger>
+    <group ref="/survey_tsect_xlsform/finds">
+      <label>Artifacts present at the site or feature.</label>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/finds_count">
+        <label>Record the number of each type of artifact present</label>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/pottery_count">
+          <label>Enter the total count of all potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/lithics_count">
+          <label>Enter the total count of all lithic material.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/faunal_count">
+          <label>Total count of all faunal remains encountered.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/brick_count">
+          <label>Number of bricks or mudbricks.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/tile_count">
+          <label>Number of tiles.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/finds_count/other_count">
+          <label>Number of other artifacts.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/finds_diagnostic">
+        <label>Record the presence of any diagnostic artfacts.</label>
+        <select appearance="minimal label" ref="/survey_tsect_xlsform/finds/finds_diagnostic/pottery_temporal">
+          <label>Select time periods of any diagnostic potsherds.</label>
+          <item>
+            <label>Neolithic</label>
+            <value>neol</value>
+          </item>
+          <item>
+            <label>Chalcolithic</label>
+            <value>chal</value>
+          </item>
+          <item>
+            <label>Bronze Age</label>
+            <value>bronze</value>
+          </item>
+          <item>
+            <label>Iron Age</label>
+            <value>iron</value>
+          </item>
+          <item>
+            <label>Mongol</label>
+            <value>mongol</value>
+          </item>
+          <item>
+            <label>Medieval</label>
+            <value>medieval</value>
+          </item>
+          <item>
+            <label>Historic</label>
+            <value>historic</value>
+          </item>
+          <item>
+            <label>Modern</label>
+            <value>modern</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/survey_tsect_xlsform/finds/finds_diagnostic/lithics_temporal">
+          <label>Select time periods of any diagnostic lithics.</label>
+          <item>
+            <label>Lower Paleolithic</label>
+            <value>lower_paleo</value>
+          </item>
+          <item>
+            <label>Middle Paleolithic</label>
+            <value>middle_paleo</value>
+          </item>
+          <item>
+            <label>Upper Paleolithic</label>
+            <value>upper_paleo</value>
+          </item>
+          <item>
+            <label>Epipaleolithic</label>
+            <value>epipal</value>
+          </item>
+          <item>
+            <label>Neolithic</label>
+            <value>neol</value>
+          </item>
+          <item>
+            <label>Chalcolithic</label>
+            <value>chal</value>
+          </item>
+          <item>
+            <label>Bronze Age</label>
+            <value>bronze</value>
+          </item>
+          <item>
+            <label>Iron Age</label>
+            <value>iron</value>
+          </item>
+          <item>
+            <label>Medieval</label>
+            <value>medieval</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+        <select appearance="minimal label" ref="/survey_tsect_xlsform/finds/finds_diagnostic/faunal_rem">
+          <label>Select all identified species.</label>
+          <item>
+            <label>Ovicaprid (goat/sheep)</label>
+            <value>ovicaprid</value>
+          </item>
+          <item>
+            <label>Bovid (cow/yak)</label>
+            <value>bovid</value>
+          </item>
+          <item>
+            <label>Equid (horse/donkey)</label>
+            <value>equid</value>
+          </item>
+          <item>
+            <label>Camelid (camel)</label>
+            <value>camelid</value>
+          </item>
+          <item>
+            <label>Sus (pig/boar)</label>
+            <value>sus</value>
+          </item>
+          <item>
+            <label>Cervid (deer)</label>
+            <value>cervid</value>
+          </item>
+          <item>
+            <label>Canid (dog/wolf/fox)</label>
+            <value>canid</value>
+          </item>
+          <item>
+            <label>Felid (cat/wildcat)</label>
+            <value>felid</value>
+          </item>
+          <item>
+            <label>Rodentia (rodents)</label>
+            <value>rodentia</value>
+          </item>
+          <item>
+            <label>Bird</label>
+            <value>bird</value>
+          </item>
+          <item>
+            <label>Fish</label>
+            <value>fish</value>
+          </item>
+          <item>
+            <label>Mollusk (shell)</label>
+            <value>mollusk</value>
+          </item>
+          <item>
+            <label>Turtle shell</label>
+            <value>turtle</value>
+          </item>
+          <item>
+            <label>Unidentified small animal bone</label>
+            <value>unident_small</value>
+          </item>
+          <item>
+            <label>Unidentified large animal bone</label>
+            <value>unident_large</value>
+          </item>
+          <item>
+            <label>Other...</label>
+            <value>other</value>
+          </item>
+        </select>
+      </group>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/pottery">
+        <label>Details of pottery finds.</label>
+        <input ref="/survey_tsect_xlsform/finds/pottery/other_pottery">
+          <label>Other diagnostic pottery:</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_neol">
+          <label>Count of Neolithic potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_chal">
+          <label>Count of Chalcolithic potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_bronze">
+          <label>Count of Bronze Age potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_iron">
+          <label>Count of Iron Age potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_mongol">
+          <label>Count of Mongol period potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_medieval">
+          <label>Count of Medieval potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_historic">
+          <label>Count of Historic period potsherds.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/pottery/pot_modern">
+          <label>Count of Modern potsherds.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/lithics">
+        <label>Details of lithic finds.</label>
+        <input ref="/survey_tsect_xlsform/finds/lithics/other_lithics">
+          <label>Other diagnostic lithics:</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_lp">
+          <label>Count of Lower Paleolithic lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_mp">
+          <label>Count of Middle Paleolithic lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_up">
+          <label>Count of Upper Paleolithic lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_epipal">
+          <label>Count of Epipaleolithic lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_neol">
+          <label>Count of Neolithic lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_bronze">
+          <label>Count of Bronze Age lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_iron">
+          <label>Count of Iron Age lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_mongol">
+          <label>Count of Mongol period lithics.</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/lithics/lith_medieval">
+          <label>Count of Medieval lithics.</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/faunal">
+        <label>Details of faunal finds.</label>
+        <input ref="/survey_tsect_xlsform/finds/faunal/other_faunal_rem">
+          <label>Other identifiable faunal remains:</label>
+        </input>
+      </group>
+      <group appearance="field-list" ref="/survey_tsect_xlsform/finds/artif_notes">
+        <label>Take some notes on the various artifacts.</label>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/pottery_notes">
+          <label>General notes on pottery</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/lithic_notes">
+          <label>General notes on lithics</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/faunal_notes">
+          <label>General notes on fauna</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/brick_notes">
+          <label>General notes on bricks or mudbricks</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/tile_notes">
+          <label>General notes on tiles</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/other_notes">
+          <label>General notes on “other” artifacts</label>
+        </input>
+        <input ref="/survey_tsect_xlsform/finds/artif_notes/general_notes">
+          <label>Any additional notes about the site, feature, or artifacts.</label>
+        </input>
+      </group>
+    </group>
+    <select appearance="minimal label" ref="/survey_tsect_xlsform/features">
+      <label>Select all the archaeological features encountered on the transect.</label>
+      <item>
+        <label>Kurgans</label>
+        <value>kurgan</value>
+      </item>
+      <item>
+        <label>Tumuli</label>
+        <value>tumuli</value>
+      </item>
+      <item>
+        <label>Caravansarai</label>
+        <value>carvan</value>
+      </item>
+      <item>
+        <label>Other mound feature</label>
+        <value>mound</value>
+      </item>
+      <item>
+        <label>Modern/Kazakh grave</label>
+        <value>grave</value>
+      </item>
+      <item>
+        <label>Pithouses</label>
+        <value>pithouse</value>
+      </item>
+      <item>
+        <label>Other house structure</label>
+        <value>other_house</value>
+      </item>
+      <item>
+        <label>Other pit feature</label>
+        <value>other_pit</value>
+      </item>
+      <item>
+        <label>Rock ring</label>
+        <value>rock_ring</value>
+      </item>
+      <item>
+        <label>Rock alignment</label>
+        <value>rock_alignment</value>
+      </item>
+      <item>
+        <label>Rock pile</label>
+        <value>rock_pile</value>
+      </item>
+      <item>
+        <label>Stone wall</label>
+        <value>stone_wall</value>
+      </item>
+      <item>
+        <label>Standing stone</label>
+        <value>standing_stone</value>
+      </item>
+      <item>
+        <label>Tower/monument</label>
+        <value>tower</value>
+      </item>
+      <item>
+        <label>Sherd scatter</label>
+        <value>sherd_scat</value>
+      </item>
+      <item>
+        <label>Lithic scatter</label>
+        <value>lithic_scat</value>
+      </item>
+      <item>
+        <label>Fire pit/hearth</label>
+        <value>fire_pit</value>
+      </item>
+      <item>
+        <label>Other…</label>
+        <value>other</value>
+      </item>
+    </select>
+    <input ref="/survey_tsect_xlsform/other_features">
+      <label>Briefly describe any “other” features that were encountered:</label>
+    </input>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/arch_features">
+      <label>Record the number of each type of site or feature encountered:</label>
+      <input ref="/survey_tsect_xlsform/arch_features/num_caravans">
+        <label>Number of caravansarai encountered.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_fire_pits">
+        <label>Number of fire pits.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_kurgans">
+        <label>Number of kurgans encountered.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_graves">
+        <label>Number of modern/Kazakh graves encountered</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_lithic_scats">
+        <label>Number of lithic scatters.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_mounds">
+        <label>Number of other mounds encountered.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_other_pits">
+        <label>Number of other pits.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_pithouses">
+        <label>Number of pithouses encountered.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_rock_aligns">
+        <label>Number of rock alignments.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_rock_piles">
+        <label>Number of rock piles.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_rock_rings">
+        <label>Number of rock rings.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_sherd_scats">
+        <label>Number of sherd scatters.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_standing_stones">
+        <label>Number of standing stones.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_stone_walls">
+        <label>Number of stone walls.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_towers">
+        <label>Number of towers or monuments.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_tumuli">
+        <label>Number of tumuli encountered.</label>
+      </input>
+      <input ref="/survey_tsect_xlsform/arch_features/num_other_feats">
+        <label>Number of “other” features.</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/tracklog_end">
+      <label>End of tracklog.</label>
+      <trigger ref="/survey_tsect_xlsform/tracklog_end/end_tracklog">
+        <label>End the track in the GPS logger **NOW**</label>
+      </trigger>
+      <input ref="/survey_tsect_xlsform/tracklog_end/track_name">
+        <label>Enter the name of the track log.</label>
+        <hint>This should be shown on the “track info” in the GPS logger app after you stop the track.</hint>
+      </input>
+      <input ref="/survey_tsect_xlsform/tracklog_end/tsect_length">
+        <label>Enter the length of transect.</label>
+        <hint>This should be shown on the “track info” in the GPS logger app after you stop the track.</hint>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/survey_tsect_xlsform/end_transect">
+      <label>End of transect.</label>
+      <input ref="/survey_tsect_xlsform/end_transect/calculated_area">
+        <label>Calculated area of the transect (length * sweep width) = <output value=" /survey_tsect_xlsform/end_transect/tsect_area "/></label></input>
+      <input ref="/survey_tsect_xlsform/end_transect/end_tsect">
+        <label>Record a waypoint for end of transect.</label>
+      </input>
+      <upload mediatype="image/*" ref="/survey_tsect_xlsform/end_transect/end_image">
+        <label>Take a picture of the transect behind you.</label>
+      </upload>
+    </group>
+    <input ref="/survey_tsect_xlsform/general_notes">
+      <label>Any additional notes about the transect or discoveries.</label>
+    </input>
+    <upload appearance="draw" mediatype="image/*" ref="/survey_tsect_xlsform/sketch">
+      <label>You can draw a simple sketch of any relevant features here.</label>
+    </upload>
+    <group ref="/survey_tsect_xlsform/other_images">
+      <label>Additional photos.</label>
+      <group ref="/survey_tsect_xlsform/other_images/images">
+        <label>Any additional photographs relevant to the transect.</label>
+        <repeat nodeset="/survey_tsect_xlsform/other_images/images">
+          <upload mediatype="image/*" ref="/survey_tsect_xlsform/other_images/images/general_image">
+            <label>Take a photo.</label>
+          </upload>
+        </repeat>
+      </group>
+    </group>
+  </h:body>
+</h:html>

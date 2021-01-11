@@ -1,0 +1,1471 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>KAAE Stratigraphic Profile Record</h:title>
+    <model>
+      <instance>
+        <stratigraphic_profile_xlsform id="KAAE_stratigraphic_profile_record">
+          <basic_inf>
+            <region/>
+            <locale/>
+            <survey_block/>
+            <surveyor/>
+            <datetime/>
+          </basic_inf>
+          <other_inf>
+            <other_region/>
+            <other_surveyor/>
+          </other_inf>
+          <geo_cover>
+            <disturbance/>
+            <groundcover/>
+            <slope/>
+            <setting/>
+          </geo_cover>
+          <geo_other>
+            <other_disturb/>
+            <other_groundcov/>
+            <other_setting/>
+          </geo_other>
+          <spatial>
+            <datum/>
+            <elevation/>
+          </spatial>
+          <strata_inf>
+            <num_strata/>
+            <general_notes/>
+            <overview_sketch/>
+            <overview_photo/>
+          </strata_inf>
+          <strata_repeat_count/>
+          <strata_repeat jr:template="">
+            <stratigraphy>
+              <stratum_label/>
+              <top_depth/>
+              <bottom_depth/>
+              <stratum_info/>
+            </stratigraphy>
+            <fines>
+              <sand_pcnt>0</sand_pcnt>
+              <silt_pcnt>0</silt_pcnt>
+              <clay_pcnt>0</clay_pcnt>
+              <matrix/>
+              <matrix_sorting/>
+            </fines>
+            <clasts>
+              <gravel_pcnt>0</gravel_pcnt>
+              <pebble_pcnt>0</pebble_pcnt>
+              <cobble_pcnt>0</cobble_pcnt>
+              <boulder_pcnt>0</boulder_pcnt>
+              <clasts_info/>
+              <clasts_sorting/>
+              <clasts_carbonates/>
+            </clasts>
+            <sandinf>
+              <sand_size/>
+              <sand_roundness/>
+              <sand_sphericity/>
+            </sandinf>
+            <gravelinf>
+              <gravel_size/>
+              <gravel_roundness/>
+              <gravel_sphericity/>
+            </gravelinf>
+            <pebbleinf>
+              <pebble_size/>
+              <pebble_roundness/>
+              <pebble_sphericity/>
+            </pebbleinf>
+            <cobbleinf>
+              <cobble_size/>
+              <cobble_roundness/>
+              <cobble_sphericity/>
+            </cobbleinf>
+            <boulderinf>
+              <boulder_size/>
+              <boulder_roundness/>
+              <boulder_sphericity/>
+            </boulderinf>
+            <sediments/>
+            <soils/>
+            <soilsinf>
+              <horizons/>
+              <soil_char/>
+              <peds/>
+              <pedsize/>
+              <soil_strength/>
+              <munsell/>
+              <soil_type/>
+              <soil_notes/>
+            </soilsinf>
+          </strata_repeat>
+          <samples>0</samples>
+          <sampling_count/>
+          <sampling jr:template="">
+            <sample_tracking>
+              <samp_type/>
+              <samp_name/>
+              <samp_depth/>
+              <samp_strat/>
+            </sample_tracking>
+          </sampling>
+          <meta>
+            <instanceID/>
+          </meta>
+        </stratigraphic_profile_xlsform>
+      </instance>
+      <bind nodeset="/stratigraphic_profile_xlsform/basic_inf/region" required="true()" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/basic_inf/locale" required="true()" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/basic_inf/survey_block" type="int"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/basic_inf/surveyor" required="true()" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/basic_inf/datetime" required="true()" type="dateTime"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/other_inf/other_region" relevant="selected( /stratigraphic_profile_xlsform/basic_inf/region , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/other_inf/other_surveyor" relevant="selected( /stratigraphic_profile_xlsform/basic_inf/surveyor , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_cover/disturbance" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_cover/groundcover" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_cover/slope" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_cover/setting" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_other/other_disturb" relevant="selected( /stratigraphic_profile_xlsform/geo_cover/disturbance , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_other/other_groundcov" relevant="selected( /stratigraphic_profile_xlsform/geo_cover/groundcover , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/geo_other/other_setting" relevant="selected( /stratigraphic_profile_xlsform/geo_cover/setting , &quot;other&quot;)" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/spatial/datum" type="geopoint"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/spatial/elevation" type="decimal"/>
+      <bind constraint=". &gt; 1" jr:constraintMsg="You must have at least one stratigraphic layer!" nodeset="/stratigraphic_profile_xlsform/strata_inf/num_strata" required="true()" type="int"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_inf/general_notes" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_inf/overview_sketch" type="binary"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_inf/overview_photo" type="binary"/>
+      <bind calculate=" /stratigraphic_profile_xlsform/strata_inf/num_strata " nodeset="/stratigraphic_profile_xlsform/strata_repeat_count" readonly="true()" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/stratum_label" required="true()" type="string"/>
+      <bind constraint=". &gt;= 0" nodeset="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/top_depth" required="true()" type="decimal"/>
+      <bind constraint=". &gt;= current()/../top_depth" jr:constraintMsg="The bottom depth cannot be less than or equal to the top depth" nodeset="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/bottom_depth" required="true()" type="decimal"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/stratum_info" type="select"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/fines/sand_pcnt" required="true()" type="int"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/fines/silt_pcnt" required="true()" type="int"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/fines/clay_pcnt" required="true()" type="int"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/fines/matrix" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/fines/matrix_sorting" type="select1"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/gravel_pcnt" required="true()" type="int"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/pebble_pcnt" required="true()" type="int"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/cobble_pcnt" required="true()" type="int"/>
+      <bind constraint=". &lt;= 100" jr:constraintMsg="Percentages must be 100 or less." nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/boulder_pcnt" required="true()" type="int"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_info" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_sorting" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_carbonates" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_size" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_roundness" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_sphericity" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_size" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_roundness" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_sphericity" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_size" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_roundness" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_sphericity" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_size" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_roundness" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_sphericity" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_size" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_roundness" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_sphericity" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/sediments" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soils" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/horizons" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_char" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/peds" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/pedsize" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_strength" type="select"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/munsell" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_type" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_notes" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/samples" type="int"/>
+      <bind calculate=" /stratigraphic_profile_xlsform/samples " nodeset="/stratigraphic_profile_xlsform/sampling_count" readonly="true()" type="string"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/sampling/sample_tracking" relevant=" /stratigraphic_profile_xlsform/samples  &gt; 0"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_type" relevant=" /stratigraphic_profile_xlsform/samples  &gt; 0" type="select1"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_name" relevant=" /stratigraphic_profile_xlsform/samples  &gt; 0" type="string"/>
+      <bind constraint=". &gt;= 0" nodeset="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_depth" relevant=" /stratigraphic_profile_xlsform/samples  &gt; 0" required="true()" type="decimal"/>
+      <bind nodeset="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_strat" relevant=" /stratigraphic_profile_xlsform/samples  &gt; 0" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/stratigraphic_profile_xlsform/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/basic_inf">
+      <label>Basic information.</label>
+      <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/basic_inf/region">
+        <label>Select the region.</label>
+        <item>
+          <label>Talgar</label>
+          <value>talgar</value>
+        </item>
+        <item>
+          <label>Issyk</label>
+          <value>issyk</value>
+        </item>
+        <item>
+          <label>Turgen</label>
+          <value>turgen</value>
+        </item>
+        <item>
+          <label>Karaturyk</label>
+          <value>karaturyk</value>
+        </item>
+        <item>
+          <label>Chilik</label>
+          <value>chilik</value>
+        </item>
+        <item>
+          <label>Ash Bulak</label>
+          <value>ash_bulak</value>
+        </item>
+        <item>
+          <label>Yunki</label>
+          <value>yunki</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/stratigraphic_profile_xlsform/basic_inf/locale">
+        <label>Enter a number or name for this profile</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/basic_inf/survey_block">
+        <label>Enter the survey block number (if any)</label>
+      </input>
+      <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/basic_inf/surveyor">
+        <label>Select all the personnel who recorded this site or feature.</label>
+        <item>
+          <label>Claudia</label>
+          <value>claudia_chang</value>
+        </item>
+        <item>
+          <label>Perry</label>
+          <value>perry_tourtellotte</value>
+        </item>
+        <item>
+          <label>Isaac</label>
+          <value>isaac_ullah</value>
+        </item>
+        <item>
+          <label>Sal</label>
+          <value>salvador_navarro</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <input ref="/stratigraphic_profile_xlsform/basic_inf/datetime">
+        <label>Enter date and time.</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/other_inf">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/stratigraphic_profile_xlsform/other_inf/other_region">
+        <label>Other region:</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/other_inf/other_surveyor">
+        <label>Other personnel:</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/geo_cover">
+      <label>Groundcover and geomorphological setting.</label>
+      <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/geo_cover/disturbance">
+        <label>Select all the types of surface disturbances that may be present.</label>
+        <item>
+          <label>Ploughing</label>
+          <value>ploughed</value>
+        </item>
+        <item>
+          <label>Bulldozer/excavation</label>
+          <value>dozer</value>
+        </item>
+        <item>
+          <label>Erosion</label>
+          <value>erosion</value>
+        </item>
+        <item>
+          <label>Bioturbation</label>
+          <value>bioturb</value>
+        </item>
+        <item>
+          <label>Grazing/trampling</label>
+          <value>trample</value>
+        </item>
+        <item>
+          <label>Driving/roads</label>
+          <value>roads</value>
+        </item>
+        <item>
+          <label>Farming</label>
+          <value>farming</value>
+        </item>
+        <item>
+          <label>Irrigation</label>
+          <value>irrigation</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/geo_cover/groundcover">
+        <label>Select all groundcover conditions for the site or feature.</label>
+        <item>
+          <label>Farm field</label>
+          <value>field</value>
+        </item>
+        <item>
+          <label>Orchard</label>
+          <value>orchard</value>
+        </item>
+        <item>
+          <label>Vineyard</label>
+          <value>vineyard</value>
+        </item>
+        <item>
+          <label>Urban/developed</label>
+          <value>urban</value>
+        </item>
+        <item>
+          <label>Grasses</label>
+          <value>steppe</value>
+        </item>
+        <item>
+          <label>Desert/scrub</label>
+          <value>desert</value>
+        </item>
+        <item>
+          <label>Shrub/maquis</label>
+          <value>shrubs</value>
+        </item>
+        <item>
+          <label>Open woodland</label>
+          <value>woodland</value>
+        </item>
+        <item>
+          <label>Forest</label>
+          <value>forest</value>
+        </item>
+        <item>
+          <label>Riparian</label>
+          <value>riparian</value>
+        </item>
+        <item>
+          <label>Wetland vegetation</label>
+          <value>wetland</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/geo_cover/slope">
+        <label>Select the range of slopes present at the surface</label>
+        <item>
+          <label>Flat (0-5 degrees)</label>
+          <value>flat</value>
+        </item>
+        <item>
+          <label>Moderate (6-10 degrees)</label>
+          <value>moderate</value>
+        </item>
+        <item>
+          <label>Sloped (11-20 degrees)</label>
+          <value>sloped</value>
+        </item>
+        <item>
+          <label>Steep (21-45 degrees)</label>
+          <value>steep</value>
+        </item>
+        <item>
+          <label>Cliff (46-90 degrees)</label>
+          <value>cliff</value>
+        </item>
+      </select>
+      <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/geo_cover/setting">
+        <label>Select the types of geomorphological settings present at the site or feature.</label>
+        <item>
+          <label>Mountains</label>
+          <value>mountains</value>
+        </item>
+        <item>
+          <label>Hills</label>
+          <value>hills</value>
+        </item>
+        <item>
+          <label>Upper fan</label>
+          <value>upper_fan</value>
+        </item>
+        <item>
+          <label>Mid-fan</label>
+          <value>mid_fan</value>
+        </item>
+        <item>
+          <label>Lower Fan</label>
+          <value>lower_fan</value>
+        </item>
+        <item>
+          <label>Lowlands</label>
+          <value>lowlands</value>
+        </item>
+        <item>
+          <label>Valley</label>
+          <value>valley</value>
+        </item>
+        <item>
+          <label>Stream cut</label>
+          <value>stream_cut</value>
+        </item>
+        <item>
+          <label>Canyon/gorge</label>
+          <value>canyon</value>
+        </item>
+        <item>
+          <label>Alluvial terrace</label>
+          <value>alluv_terrace</value>
+        </item>
+        <item>
+          <label>Bench or strath terrace</label>
+          <value>strath_terrace</value>
+        </item>
+        <item>
+          <label>Hillslope</label>
+          <value>hillslope</value>
+        </item>
+        <item>
+          <label>Ridge or pass</label>
+          <value>ridge_pass</value>
+        </item>
+        <item>
+          <label>Peak or hilltop</label>
+          <value>peak</value>
+        </item>
+        <item>
+          <label>Swales and hillocks</label>
+          <value>swales</value>
+        </item>
+        <item>
+          <label>Basin or trough</label>
+          <value>basin</value>
+        </item>
+        <item>
+          <label>Playa</label>
+          <value>playa</value>
+        </item>
+        <item>
+          <label>Mesa/plateau</label>
+          <value>mesa</value>
+        </item>
+        <item>
+          <label>Wetlands</label>
+          <value>wetlands</value>
+        </item>
+        <item>
+          <label>Paleochannel</label>
+          <value>paleochannel</value>
+        </item>
+        <item>
+          <label>Paleo-lake shore</label>
+          <value>paleoshore</value>
+        </item>
+        <item>
+          <label>Relect landform</label>
+          <value>relect_lform</value>
+        </item>
+        <item>
+          <label>Other...</label>
+          <value>other</value>
+        </item>
+      </select>
+    </group>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/geo_other">
+      <label>Enter specifics of “other” in the following categories:</label>
+      <input ref="/stratigraphic_profile_xlsform/geo_other/other_disturb">
+        <label>Other disturbances:</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/geo_other/other_groundcov">
+        <label>Other groundcover:</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/geo_other/other_setting">
+        <label>Other geomorphological setting:</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/spatial">
+      <label>Collect spatial information about the site or feature.</label>
+      <input ref="/stratigraphic_profile_xlsform/spatial/datum">
+        <label>Record a datum waypoint for the profile.</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/spatial/elevation">
+        <label>Enter the GPS elevation at the top of the profile.</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_inf">
+      <label>Enter general information about the stratigraphy</label>
+      <input ref="/stratigraphic_profile_xlsform/strata_inf/num_strata">
+        <label>How many stratigraphic layers are present?</label>
+      </input>
+      <input ref="/stratigraphic_profile_xlsform/strata_inf/general_notes">
+        <label>General notes about the profile and locale.</label>
+      </input>
+      <upload appearance="draw" mediatype="image/*" ref="/stratigraphic_profile_xlsform/strata_inf/overview_sketch">
+        <label>Draw a general sketch of the profile.</label>
+      </upload>
+      <upload mediatype="image/*" ref="/stratigraphic_profile_xlsform/strata_inf/overview_photo">
+        <label>Take an overview photo of the profile</label>
+      </upload>
+    </group>
+    <group ref="/stratigraphic_profile_xlsform/strata_repeat">
+      <label>Information about each stratigraphic layer</label>
+      <repeat jr:count=" /stratigraphic_profile_xlsform/strata_repeat_count " nodeset="/stratigraphic_profile_xlsform/strata_repeat">
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy">
+          <label>Stratigraphic information.</label>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/stratum_label">
+            <label>Number/designation of this stratum</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/top_depth">
+            <label>Depth below surface of top of stratum (m)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/bottom_depth">
+            <label>Depth below surface of bottom of stratum (m)</label>
+          </input>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/stratigraphy/stratum_info">
+            <label>Select all characteristics that apply to the stratum</label>
+            <item>
+              <label>Carbon or ash present</label>
+              <value>carbon</value>
+            </item>
+            <item>
+              <label>Quartz sand present</label>
+              <value>quartz</value>
+            </item>
+            <item>
+              <label>Paleosol present</label>
+              <value>paleosol</value>
+            </item>
+            <item>
+              <label>Artifacts present</label>
+              <value>artifacts</value>
+            </item>
+            <item>
+              <label>Features present</label>
+              <value>features</value>
+            </item>
+            <item>
+              <label>Live plant roots present</label>
+              <value>roots</value>
+            </item>
+            <item>
+              <label>Root casts or rotted plant roots present.</label>
+              <value>filled_roots</value>
+            </item>
+            <item>
+              <label>Krotovina present (filled animal burrows)</label>
+              <value>krotovina</value>
+            </item>
+            <item>
+              <label>Animal burrows present (unfilled/active)</label>
+              <value>burrow</value>
+            </item>
+            <item>
+              <label>Evidence of insect or worm activity</label>
+              <value>insects</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/fines">
+          <label>Fines in the matrix.</label>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/fines/sand_pcnt">
+            <label>Percent sand (use chart to estimate)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/fines/silt_pcnt">
+            <label>Percent silt (use chart to estimate)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/fines/clay_pcnt">
+            <label>Percent clay (use chart to estimate)</label>
+          </input>
+          <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/fines/matrix">
+            <label>Choose the appropriate designation for the mixture of fines in the matrix</label>
+            <item>
+              <label>Silt (&gt;75% silt)</label>
+              <value>silt</value>
+            </item>
+            <item>
+              <label>Sandy silt (mostly silt, with 50% or less sands)</label>
+              <value>sandy_silt</value>
+            </item>
+            <item>
+              <label>Silty sand (mostly sand, with 50% or less silts)</label>
+              <value>silty_sand</value>
+            </item>
+            <item>
+              <label>Sand (&gt;75% sands)</label>
+              <value>sand</value>
+            </item>
+            <item>
+              <label>Clayey sand (mostly sand with 50% or less clays)</label>
+              <value>clayey_sand</value>
+            </item>
+            <item>
+              <label>Sandy clay (mostly clay with 50% or less sands)</label>
+              <value>sandy_clay</value>
+            </item>
+            <item>
+              <label>Clay (&gt;75% clay)</label>
+              <value>clay</value>
+            </item>
+            <item>
+              <label>Silty clay (mostly silt with 50% or less clays)</label>
+              <value>silty_clay</value>
+            </item>
+            <item>
+              <label>Clayey silt (mostly clay with 50% or less silt)</label>
+              <value>clayey_silt</value>
+            </item>
+            <item>
+              <label>Loam (generally even mixture of sand, silt, and clay)</label>
+              <value>loam</value>
+            </item>
+          </select1>
+          <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/fines/matrix_sorting">
+            <label>Select the sorting of the matrix</label>
+            <item>
+              <label>Very poorly sorted</label>
+              <value>very_poorly</value>
+            </item>
+            <item>
+              <label>Poorly sorted</label>
+              <value>poorly</value>
+            </item>
+            <item>
+              <label>Moderately sorted</label>
+              <value>moderately</value>
+            </item>
+            <item>
+              <label>Well sorted</label>
+              <value>well</value>
+            </item>
+            <item>
+              <label>Very well sorted</label>
+              <value>very_well</value>
+            </item>
+          </select1>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/clasts">
+          <label>Larger clasts.</label>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/gravel_pcnt">
+            <label>Percent gravel (use chart to estimate)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/pebble_pcnt">
+            <label>Percent pebbles (use chart to estimate)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/cobble_pcnt">
+            <label>Percent cobbles (use chart to estimate)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/boulder_pcnt">
+            <label>Percent boulders (use chart to estimate)</label>
+          </input>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_info">
+            <label>Select all characteristics that apply to the clasts</label>
+            <item>
+              <label>Matrix-supported clasts</label>
+              <value>matrix_sup</value>
+            </item>
+            <item>
+              <label>Clast-supported clasts</label>
+              <value>clast_sup</value>
+            </item>
+            <item>
+              <label>Imbricated clasts</label>
+              <value>imbricated</value>
+            </item>
+          </select>
+          <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_sorting">
+            <label>Select the sorting of the clasts</label>
+            <item>
+              <label>Very poorly sorted</label>
+              <value>very_poorly</value>
+            </item>
+            <item>
+              <label>Poorly sorted</label>
+              <value>poorly</value>
+            </item>
+            <item>
+              <label>Moderately sorted</label>
+              <value>moderately</value>
+            </item>
+            <item>
+              <label>Well sorted</label>
+              <value>well</value>
+            </item>
+            <item>
+              <label>Very well sorted</label>
+              <value>very_well</value>
+            </item>
+          </select1>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/clasts/clasts_carbonates">
+            <label>Select the strength of carbonate encrustation</label>
+            <item>
+              <label>No carbonates present on clasts</label>
+              <value>none</value>
+            </item>
+            <item>
+              <label>Very weak carbonate formation on clasts (faint white film)</label>
+              <value>very_weak</value>
+            </item>
+            <item>
+              <label>Weak carbonate formation on clasts (thin undercoating)</label>
+              <value>weak</value>
+            </item>
+            <item>
+              <label>Moderate carbonate formation on clasts (thick undercoating)</label>
+              <value>moderate</value>
+            </item>
+            <item>
+              <label>Strong carbonate formation on clasts (partial cementation)</label>
+              <value>strong</value>
+            </item>
+            <item>
+              <label>Very strong carbonate formation on clasts (total cementation)</label>
+              <value>very_strong</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/sandinf">
+          <label>Information about sands</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_size">
+            <label>Size of sand grains (use chart to estimate)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_roundness">
+            <label>Roundness of sand grains (use chart to estimate)</label>
+            <item>
+              <label>Very Angular</label>
+              <value>very_angular</value>
+            </item>
+            <item>
+              <label>Angular</label>
+              <value>angular</value>
+            </item>
+            <item>
+              <label>Subangular</label>
+              <value>subangular</value>
+            </item>
+            <item>
+              <label>Subrounded</label>
+              <value>subrounded</value>
+            </item>
+            <item>
+              <label>Rounded</label>
+              <value>rounded</value>
+            </item>
+            <item>
+              <label>Very Rounded</label>
+              <value>very_rounded</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/sandinf/sand_sphericity">
+            <label>Sphericity of sands (use chart to estimate)</label>
+            <item>
+              <label>Low sphericity</label>
+              <value>low</value>
+            </item>
+            <item>
+              <label>Medium sphericity</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>High sphericity</label>
+              <value>high</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/gravelinf">
+          <label>Information about gravels</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_size">
+            <label>Size of gravels (use chart to estimate)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_roundness">
+            <label>Roundness of gravels (use chart to estimate)</label>
+            <item>
+              <label>Very Angular</label>
+              <value>very_angular</value>
+            </item>
+            <item>
+              <label>Angular</label>
+              <value>angular</value>
+            </item>
+            <item>
+              <label>Subangular</label>
+              <value>subangular</value>
+            </item>
+            <item>
+              <label>Subrounded</label>
+              <value>subrounded</value>
+            </item>
+            <item>
+              <label>Rounded</label>
+              <value>rounded</value>
+            </item>
+            <item>
+              <label>Very Rounded</label>
+              <value>very_rounded</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/gravelinf/gravel_sphericity">
+            <label>Sphericity of gravels (use chart to estimate)</label>
+            <item>
+              <label>Low sphericity</label>
+              <value>low</value>
+            </item>
+            <item>
+              <label>Medium sphericity</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>High sphericity</label>
+              <value>high</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf">
+          <label>Information about pebbles</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_size">
+            <label>Size of pebbles (use chart to estimate)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_roundness">
+            <label>Roundness of pebbles (use chart to estimate)</label>
+            <item>
+              <label>Very Angular</label>
+              <value>very_angular</value>
+            </item>
+            <item>
+              <label>Angular</label>
+              <value>angular</value>
+            </item>
+            <item>
+              <label>Subangular</label>
+              <value>subangular</value>
+            </item>
+            <item>
+              <label>Subrounded</label>
+              <value>subrounded</value>
+            </item>
+            <item>
+              <label>Rounded</label>
+              <value>rounded</value>
+            </item>
+            <item>
+              <label>Very Rounded</label>
+              <value>very_rounded</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/pebbleinf/pebble_sphericity">
+            <label>Sphericity of pebbles (use chart to estimate)</label>
+            <item>
+              <label>Low sphericity</label>
+              <value>low</value>
+            </item>
+            <item>
+              <label>Medium sphericity</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>High sphericity</label>
+              <value>high</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf">
+          <label>Information about cobbles</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_size">
+            <label>Size of cobbles (use chart to estimate)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_roundness">
+            <label>Roundness of cobbles (use chart to estimate)</label>
+            <item>
+              <label>Very Angular</label>
+              <value>very_angular</value>
+            </item>
+            <item>
+              <label>Angular</label>
+              <value>angular</value>
+            </item>
+            <item>
+              <label>Subangular</label>
+              <value>subangular</value>
+            </item>
+            <item>
+              <label>Subrounded</label>
+              <value>subrounded</value>
+            </item>
+            <item>
+              <label>Rounded</label>
+              <value>rounded</value>
+            </item>
+            <item>
+              <label>Very Rounded</label>
+              <value>very_rounded</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/cobbleinf/cobble_sphericity">
+            <label>Sphericty of cobbles (use chart to estimate)</label>
+            <item>
+              <label>Low sphericity</label>
+              <value>low</value>
+            </item>
+            <item>
+              <label>Medium sphericity</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>High sphericity</label>
+              <value>high</value>
+            </item>
+          </select>
+        </group>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/boulderinf">
+          <label>Information about boulders</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_size">
+            <label>Size of boulders (use chart to estimate)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_roundness">
+            <label>Roundness of boulder (use chart to estimate)</label>
+            <item>
+              <label>Very Angular</label>
+              <value>very_angular</value>
+            </item>
+            <item>
+              <label>Angular</label>
+              <value>angular</value>
+            </item>
+            <item>
+              <label>Subangular</label>
+              <value>subangular</value>
+            </item>
+            <item>
+              <label>Subrounded</label>
+              <value>subrounded</value>
+            </item>
+            <item>
+              <label>Rounded</label>
+              <value>rounded</value>
+            </item>
+            <item>
+              <label>Very Rounded</label>
+              <value>very_rounded</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/boulderinf/boulder_sphericity">
+            <label>Sphericity of boulders (use chart to estimate)</label>
+            <item>
+              <label>Low sphericity</label>
+              <value>low</value>
+            </item>
+            <item>
+              <label>Medium sphericity</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>High sphericity</label>
+              <value>high</value>
+            </item>
+          </select>
+        </group>
+        <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/sediments">
+          <label>Select the most likely depositional environment of the stratum.</label>
+          <item>
+            <label>Alluvial stream deposits</label>
+            <value>alluv_stream</value>
+          </item>
+          <item>
+            <label>Alluvial fan deposits</label>
+            <value>alluv_fan</value>
+          </item>
+          <item>
+            <label>Alluvial floodplain deposits</label>
+            <value>alluv_floodplain</value>
+          </item>
+          <item>
+            <label>Aeolian loess deposits</label>
+            <value>aeol_loess</value>
+          </item>
+          <item>
+            <label>Aeolian dune deposits</label>
+            <value>aeol_dunes</value>
+          </item>
+          <item>
+            <label>Colluvial slope wash or scree</label>
+            <value>coll_slopewash</value>
+          </item>
+          <item>
+            <label>Colluvial landslide or mass wasting</label>
+            <value>coll_landslide</value>
+          </item>
+          <item>
+            <label>Anthropogenic deposits</label>
+            <value>anthropogenic</value>
+          </item>
+          <item>
+            <label>Regolith</label>
+            <value>regolith</value>
+          </item>
+        </select1>
+        <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soils">
+          <label>Is there any soil development present in the stratum?</label>
+          <item>
+            <label>Soil development present</label>
+            <value>yes</value>
+          </item>
+          <item>
+            <label>No soil development present</label>
+            <value>no</value>
+          </item>
+        </select1>
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf">
+          <label>Soil information.</label>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/horizons">
+            <label>Select all soil horizons present</label>
+            <item>
+              <label>O horizon (organic/humus)</label>
+              <value>O</value>
+            </item>
+            <item>
+              <label>O/A horizon (humus fading to dark)</label>
+              <value>OA</value>
+            </item>
+            <item>
+              <label>A horizon (dark/rich)</label>
+              <value>A</value>
+            </item>
+            <item>
+              <label>A/B horizon (dark fading red)</label>
+              <value>AB</value>
+            </item>
+            <item>
+              <label>E horizon (pale/leached/eluviated)</label>
+              <value>E</value>
+            </item>
+            <item>
+              <label>E/B horizon (pale fading red)</label>
+              <value>EB</value>
+            </item>
+            <item>
+              <label>B horizon (reddish/iron rich/clays)</label>
+              <value>B</value>
+            </item>
+            <item>
+              <label>B/C horizon (reddish fading to parent)</label>
+              <value>BC</value>
+            </item>
+            <item>
+              <label>C horizon (parent/unmodified sediment)</label>
+              <value>C</value>
+            </item>
+            <item>
+              <label>R horizon (bedrock)</label>
+              <value>R</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_char">
+            <label>Select all soil characteristics present</label>
+            <item>
+              <label>Organic matter, highly decomposed</label>
+              <value>a</value>
+            </item>
+            <item>
+              <label>Concretions or nodules</label>
+              <value>c</value>
+            </item>
+            <item>
+              <label>Organic matter, intermediate decomposition</label>
+              <value>e</value>
+            </item>
+            <item>
+              <label>Strong gleying (mottling)</label>
+              <value>g</value>
+            </item>
+            <item>
+              <label>Organic matter, slightly decomposed</label>
+              <value>i</value>
+            </item>
+            <item>
+              <label>Cryoturbation (frost churning)</label>
+              <value>j</value>
+            </item>
+            <item>
+              <label>Cementation or Induration</label>
+              <value>m</value>
+            </item>
+            <item>
+              <label>Accumulation of Fe and Al oxides</label>
+              <value>o</value>
+            </item>
+            <item>
+              <label>Accumulation of silica</label>
+              <value>q</value>
+            </item>
+            <item>
+              <label>Illuvial organic matter and Fe and Al oxides</label>
+              <value>s</value>
+            </item>
+            <item>
+              <label>Accumulation of silicate clays</label>
+              <value>t</value>
+            </item>
+            <item>
+              <label>Plinthite (high iron, red material)</label>
+              <value>v</value>
+            </item>
+            <item>
+              <label>Fragipan (high bulk density, brittle)</label>
+              <value>x</value>
+            </item>
+            <item>
+              <label>Accumulation of soluble salts</label>
+              <value>z</value>
+            </item>
+            <item>
+              <label>Buried soil horizon</label>
+              <value>b</value>
+            </item>
+            <item>
+              <label>Dense unconsolidated materials</label>
+              <value>d</value>
+            </item>
+            <item>
+              <label>Frozen soil</label>
+              <value>f</value>
+            </item>
+            <item>
+              <label>Illuvial accumulation of organic matter</label>
+              <value>h</value>
+            </item>
+            <item>
+              <label>Jarosite (yellow sulfate mineral)</label>
+              <value>j</value>
+            </item>
+            <item>
+              <label>Accumulation of carbonates</label>
+              <value>k</value>
+            </item>
+            <item>
+              <label>Accumulation of sodium</label>
+              <value>n</value>
+            </item>
+            <item>
+              <label>Plowing or other disturbance</label>
+              <value>p</value>
+            </item>
+            <item>
+              <label>Weathered or soft bedrock</label>
+              <value>r</value>
+            </item>
+            <item>
+              <label>Slickensides (shiny clay wedges)</label>
+              <value>ss</value>
+            </item>
+            <item>
+              <label>Presence of human-manufactured materials (artifacts)</label>
+              <value>u</value>
+            </item>
+            <item>
+              <label>Distinctive color or structure without clay accumulation</label>
+              <value>w</value>
+            </item>
+            <item>
+              <label>Accumulation of gypsum</label>
+              <value>y</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/peds">
+            <label>Select the ped structure of the soils</label>
+            <item>
+              <label>Platy (peds flat and plate-like)</label>
+              <value>platy</value>
+            </item>
+            <item>
+              <label>Prismatic (flat or rounded faces, longer vertically)</label>
+              <value>prismatic</value>
+            </item>
+            <item>
+              <label>Columnar (like prismatic, but longer and distinct tops)</label>
+              <value>columnar</value>
+            </item>
+            <item>
+              <label>Blocky (peds blocklike or polyhedral)</label>
+              <value>blocky</value>
+            </item>
+            <item>
+              <label>Granular (looks like cookie crumbs)</label>
+              <value>granular</value>
+            </item>
+            <item>
+              <label>Massive (highly indurated and cohesive)</label>
+              <value>massive</value>
+            </item>
+            <item>
+              <label>Indeterminate (difficult to asses the ped strucure)</label>
+              <value>inderterminate</value>
+            </item>
+            <item>
+              <label>No ped structure</label>
+              <value>none</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/pedsize">
+            <label>Select the sizes of the ped structures (use size guides in Munsell book)</label>
+            <item>
+              <label>Very fine</label>
+              <value>vfine</value>
+            </item>
+            <item>
+              <label>Fine</label>
+              <value>fine</value>
+            </item>
+            <item>
+              <label>Medium</label>
+              <value>medium</value>
+            </item>
+            <item>
+              <label>Coarse</label>
+              <value>coarse</value>
+            </item>
+            <item>
+              <label>Very Coarse</label>
+              <value>verycoarse</value>
+            </item>
+          </select>
+          <select appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_strength">
+            <label>Select the strength of soil development</label>
+            <item>
+              <label>No soil development</label>
+              <value>none</value>
+            </item>
+            <item>
+              <label>Very weak soil development (very young)</label>
+              <value>very_weak</value>
+            </item>
+            <item>
+              <label>Weak soil development (young)</label>
+              <value>weak</value>
+            </item>
+            <item>
+              <label>Moderate soil development (older)</label>
+              <value>moderate</value>
+            </item>
+            <item>
+              <label>Strong soil development (old)</label>
+              <value>strong</value>
+            </item>
+            <item>
+              <label>Very strong soil development (very old)</label>
+              <value>very_strong</value>
+            </item>
+          </select>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/munsell">
+            <label>Enter the Munsell color code of the soil.</label>
+          </input>
+          <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_type">
+            <label>Select the soil type that best describes this soil.</label>
+            <item>
+              <label>Alfisol (broadleaf forest soil)</label>
+              <value>alfisol</value>
+            </item>
+            <item>
+              <label>Andisol (volcanic, andesite soil)</label>
+              <value>andisol</value>
+            </item>
+            <item>
+              <label>Aridisol (dry desert soil)</label>
+              <value>aridsol</value>
+            </item>
+            <item>
+              <label>Entisol (very young soil, OA horizon only)</label>
+              <value>entisol</value>
+            </item>
+            <item>
+              <label>Gelisol (soil with permafrost)</label>
+              <value>gelisol</value>
+            </item>
+            <item>
+              <label>Histosol (aquatic or waterlogged soils)</label>
+              <value>histosol</value>
+            </item>
+            <item>
+              <label>Inceptisol (young soil, B horizon just evident)</label>
+              <value>inceptisol</value>
+            </item>
+            <item>
+              <label>Mollisol (grassland soil)</label>
+              <value>mollisol</value>
+            </item>
+            <item>
+              <label>Oxisol (highly developed soil, many clays, often in tropics)</label>
+              <value>oxisol</value>
+            </item>
+            <item>
+              <label>Spodisol (acidic boreal forest soil)</label>
+              <value>spodisol</value>
+            </item>
+            <item>
+              <label>Ultisol (subtropical red clay soils)</label>
+              <value>ultisol</value>
+            </item>
+            <item>
+              <label>Vertisol (Also grassland, but with large columnar peds)</label>
+              <value>vertisol</value>
+            </item>
+          </select1>
+          <input ref="/stratigraphic_profile_xlsform/strata_repeat/soilsinf/soil_notes">
+            <label>Write any additional notes about the soils in this layer.</label>
+          </input>
+        </group>
+      </repeat>
+    </group>
+    <input ref="/stratigraphic_profile_xlsform/samples">
+      <label>How many samples were taken from this profile?</label>
+    </input>
+    <group ref="/stratigraphic_profile_xlsform/sampling">
+      <label>Samples?</label>
+      <repeat jr:count=" /stratigraphic_profile_xlsform/sampling_count " nodeset="/stratigraphic_profile_xlsform/sampling">
+        <group appearance="field-list" ref="/stratigraphic_profile_xlsform/sampling/sample_tracking">
+          <label>Enter information about sample taken from this layer.</label>
+          <select1 appearance="minimal label" ref="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_type">
+            <label>Select the type of sample</label>
+            <item>
+              <label>OSL sample</label>
+              <value>OSL</value>
+            </item>
+            <item>
+              <label>Radiocarbon sample</label>
+              <value>RC</value>
+            </item>
+            <item>
+              <label>Bulk sediment sample</label>
+              <value>sediment</value>
+            </item>
+            <item>
+              <label>Archaeological ceramic</label>
+              <value>ceramic</value>
+            </item>
+            <item>
+              <label>Archaeological lithic</label>
+              <value>lithic</value>
+            </item>
+            <item>
+              <label>Archaeological faunal bone</label>
+              <value>bone</value>
+            </item>
+          </select1>
+          <input ref="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_name">
+            <label>Name/designation of sample</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_depth">
+            <label>Depth below surface of bottom of sample (m)</label>
+          </input>
+          <input ref="/stratigraphic_profile_xlsform/sampling/sample_tracking/samp_strat">
+            <label>Name/designation of the stratagraphic unit from which the sample comes.</label>
+          </input>
+        </group>
+      </repeat>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Albenga survey</h:title>
+    <model>
+      <instance>
+        <Albenga_survey id="Albenga_surv">
+          <setup>
+            <date/>
+            <time/>
+            <muni>ortovero</muni>
+            <twn>ortovero</twn>
+          </setup>
+          <field_info>
+            <field_num/>
+            <field_datum/>
+            <vis/>
+            <lcover/>
+            <field_image/>
+            <notes/>
+          </field_info>
+          <pottery_group>
+            <diagnostics_pot/>
+            <other_pots/>
+            <numpots/>
+            <numdiagp/>
+          </pottery_group>
+          <lithics_group>
+            <diagnostics_lith/>
+            <other_liths/>
+            <numliths/>
+            <numdiagl/>
+          </lithics_group>
+          <additional>
+            <arti_notes/>
+            <im1/>
+            <im2/>
+            <im3/>
+            <im4/>
+          </additional>
+          <meta>
+            <instanceID/>
+          </meta>
+        </Albenga_survey>
+      </instance>
+      <bind nodeset="/Albenga_survey/setup/date" required="true()" type="date"/>
+      <bind nodeset="/Albenga_survey/setup/time" required="true()" type="time"/>
+      <bind nodeset="/Albenga_survey/setup/muni" required="true()" type="select1"/>
+      <bind nodeset="/Albenga_survey/setup/twn" required="true()" type="select1"/>
+      <bind nodeset="/Albenga_survey/field_info/field_num" required="true()" type="int"/>
+      <bind nodeset="/Albenga_survey/field_info/field_datum" required="true()" type="geopoint"/>
+      <bind nodeset="/Albenga_survey/field_info/vis" required="true()" type="select"/>
+      <bind nodeset="/Albenga_survey/field_info/lcover" required="true()" type="select"/>
+      <bind nodeset="/Albenga_survey/field_info/field_image" required="true()" type="binary"/>
+      <bind nodeset="/Albenga_survey/field_info/notes" type="string"/>
+      <bind nodeset="/Albenga_survey/pottery_group/diagnostics_pot" type="select"/>
+      <bind nodeset="/Albenga_survey/pottery_group/other_pots" type="select1"/>
+      <bind nodeset="/Albenga_survey/pottery_group/numpots" type="int"/>
+      <bind nodeset="/Albenga_survey/pottery_group/numdiagp" type="int"/>
+      <bind nodeset="/Albenga_survey/lithics_group/diagnostics_lith" type="select"/>
+      <bind nodeset="/Albenga_survey/lithics_group/other_liths" type="select1"/>
+      <bind nodeset="/Albenga_survey/lithics_group/numliths" type="int"/>
+      <bind nodeset="/Albenga_survey/lithics_group/numdiagl" type="int"/>
+      <bind nodeset="/Albenga_survey/additional/arti_notes" type="string"/>
+      <bind nodeset="/Albenga_survey/additional/im1" type="binary"/>
+      <bind nodeset="/Albenga_survey/additional/im2" type="binary"/>
+      <bind nodeset="/Albenga_survey/additional/im3" type="binary"/>
+      <bind nodeset="/Albenga_survey/additional/im4" type="binary"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/Albenga_survey/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <group appearance="field-list" ref="/Albenga_survey/setup">
+      <label>Basic data</label>
+      <input ref="/Albenga_survey/setup/date">
+        <label>Enter the date:</label>
+      </input>
+      <input ref="/Albenga_survey/setup/time">
+        <label>Enter the time:</label>
+      </input>
+      <select1 ref="/Albenga_survey/setup/muni">
+        <label>In which municipality is the field located?</label>
+        <item>
+          <label>Ortovero</label>
+          <value>ortovero</value>
+        </item>
+        <item>
+          <label>Albenga</label>
+          <value>albenga</value>
+        </item>
+        <item>
+          <label>Pogli</label>
+          <value>pogli</value>
+        </item>
+      </select1>
+      <select1 ref="/Albenga_survey/setup/twn">
+        <label>In which town is the field located?</label>
+        <item>
+          <label>Ortovero</label>
+          <value>ortovero</value>
+        </item>
+        <item>
+          <label>Borgo</label>
+          <value>borgo</value>
+        </item>
+        <item>
+          <label>Pogli</label>
+          <value>pogli</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/Albenga_survey/field_info">
+      <label>Information about the field to be surveyed</label>
+      <input ref="/Albenga_survey/field_info/field_num">
+        <label>Enter an integer number for this field:</label>
+      </input>
+      <input ref="/Albenga_survey/field_info/field_datum">
+        <label>Record a datum waypoint for the field:</label>
+        <hint>GPS coordinates can only be collected when outside.</hint>
+      </input>
+      <select ref="/Albenga_survey/field_info/vis">
+        <label>Ground visibility conditions</label>
+        <item>
+          <label>Good</label>
+          <value>good</value>
+        </item>
+        <item>
+          <label>Average</label>
+          <value>average</value>
+        </item>
+        <item>
+          <label>Poor</label>
+          <value>poor</value>
+        </item>
+      </select>
+      <select ref="/Albenga_survey/field_info/lcover">
+        <label>Vegetation or ground cover type.</label>
+        <item>
+          <label>Ploughed Field</label>
+          <value>pfield</value>
+        </item>
+        <item>
+          <label>Overgrown Field</label>
+          <value>ofield</value>
+        </item>
+        <item>
+          <label>Planted Field</label>
+          <value>plfield</value>
+        </item>
+        <item>
+          <label>Olive Orchard</label>
+          <value>oorch</value>
+        </item>
+        <item>
+          <label>Fruit Orchard</label>
+          <value>fruit</value>
+        </item>
+        <item>
+          <label>Vineyard</label>
+          <value>vine</value>
+        </item>
+        <item>
+          <label>Bare dirt</label>
+          <value>bare</value>
+        </item>
+        <item>
+          <label>Forest</label>
+          <value>forest</value>
+        </item>
+        <item>
+          <label>Shrubs</label>
+          <value>shrub</value>
+        </item>
+        <item>
+          <label>Grasses</label>
+          <value>grass</value>
+        </item>
+      </select>
+      <upload mediatype="image/*" ref="/Albenga_survey/field_info/field_image">
+        <label>Take a picture of the field you are about to walk:</label>
+      </upload>
+      <input ref="/Albenga_survey/field_info/notes">
+        <label>Take some notes about the field or location.</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/Albenga_survey/pottery_group">
+      <label>Pottery</label>
+      <select ref="/Albenga_survey/pottery_group/diagnostics_pot">
+        <label>Check all periods present</label>
+        <item>
+          <label>Middle Paleolithic</label>
+          <value>mpal</value>
+        </item>
+        <item>
+          <label>Upper Paleolithic</label>
+          <value>upal</value>
+        </item>
+        <item>
+          <label>Gravetian</label>
+          <value>grav</value>
+        </item>
+        <item>
+          <label>Epigravetian</label>
+          <value>epigr</value>
+        </item>
+        <item>
+          <label>Mesolithic</label>
+          <value>meso</value>
+        </item>
+        <item>
+          <label>Early Neolithic</label>
+          <value>early_n</value>
+        </item>
+        <item>
+          <label>Middle Neolithic</label>
+          <value>middle_n</value>
+        </item>
+        <item>
+          <label>Late Neolithic</label>
+          <value>late_n</value>
+        </item>
+        <item>
+          <label>Bronze Age</label>
+          <value>bronze</value>
+        </item>
+        <item>
+          <label>Iron Age</label>
+          <value>iron</value>
+        </item>
+        <item>
+          <label>Roman</label>
+          <value>roman</value>
+        </item>
+        <item>
+          <label>Medieval</label>
+          <value>medieval</value>
+        </item>
+        <item>
+          <label>Historic</label>
+          <value>historic</value>
+        </item>
+        <item>
+          <label>Modern</label>
+          <value>modern</value>
+        </item>
+      </select>
+      <select1 ref="/Albenga_survey/pottery_group/other_pots">
+        <label>Any undiagnostic sherds?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/Albenga_survey/pottery_group/numpots">
+        <label>Total number of sherds found</label>
+      </input>
+      <input ref="/Albenga_survey/pottery_group/numdiagp">
+        <label>Number of diagnostic sherds found.</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/Albenga_survey/lithics_group">
+      <label>Lithics</label>
+      <select ref="/Albenga_survey/lithics_group/diagnostics_lith">
+        <label>Check all periods present</label>
+        <item>
+          <label>Middle Paleolithic</label>
+          <value>mpal</value>
+        </item>
+        <item>
+          <label>Upper Paleolithic</label>
+          <value>upal</value>
+        </item>
+        <item>
+          <label>Gravetian</label>
+          <value>grav</value>
+        </item>
+        <item>
+          <label>Epigravetian</label>
+          <value>epigr</value>
+        </item>
+        <item>
+          <label>Mesolithic</label>
+          <value>meso</value>
+        </item>
+        <item>
+          <label>Early Neolithic</label>
+          <value>early_n</value>
+        </item>
+        <item>
+          <label>Middle Neolithic</label>
+          <value>middle_n</value>
+        </item>
+        <item>
+          <label>Late Neolithic</label>
+          <value>late_n</value>
+        </item>
+        <item>
+          <label>Bronze Age</label>
+          <value>bronze</value>
+        </item>
+        <item>
+          <label>Iron Age</label>
+          <value>iron</value>
+        </item>
+        <item>
+          <label>Roman</label>
+          <value>roman</value>
+        </item>
+        <item>
+          <label>Medieval</label>
+          <value>medieval</value>
+        </item>
+        <item>
+          <label>Historic</label>
+          <value>historic</value>
+        </item>
+        <item>
+          <label>Modern</label>
+          <value>modern</value>
+        </item>
+      </select>
+      <select1 ref="/Albenga_survey/lithics_group/other_liths">
+        <label>Any undiagnostic lithics?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/Albenga_survey/lithics_group/numliths">
+        <label>Total number of lithics found.</label>
+      </input>
+      <input ref="/Albenga_survey/lithics_group/numdiagl">
+        <label>Number of diagnostic lithics found.</label>
+      </input>
+    </group>
+    <group ref="/Albenga_survey/additional">
+      <label>Additional notes and photographs</label>
+      <input ref="/Albenga_survey/additional/arti_notes">
+        <label>Take some notes about the kinds of artifacts or features you saw.</label>
+      </input>
+      <upload mediatype="image/*" ref="/Albenga_survey/additional/im1">
+        <label>Additional photo 1</label>
+      </upload>
+      <upload mediatype="image/*" ref="/Albenga_survey/additional/im2">
+        <label>Additional photo 2</label>
+      </upload>
+      <upload mediatype="image/*" ref="/Albenga_survey/additional/im3">
+        <label>Additional photo 3</label>
+      </upload>
+      <upload mediatype="image/*" ref="/Albenga_survey/additional/im4">
+        <label>Additional photo 4</label>
+      </upload>
+    </group>
+  </h:body>
+</h:html>
